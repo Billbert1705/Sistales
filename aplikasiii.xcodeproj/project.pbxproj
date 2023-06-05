@@ -14,6 +14,7 @@
 		BF845BF82A2C7DBF00C51118 /* aplikasiiiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF845BF72A2C7DBF00C51118 /* aplikasiiiTests.swift */; };
 		BF845C022A2C7DBF00C51118 /* aplikasiiiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF845C012A2C7DBF00C51118 /* aplikasiiiUITests.swift */; };
 		BF845C042A2C7DBF00C51118 /* aplikasiiiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF845C032A2C7DBF00C51118 /* aplikasiiiUITestsLaunchTests.swift */; };
+		BF845C132A2C831A00C51118 /* preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF845C122A2C831A00C51118 /* preview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		BF845BFD2A2C7DBF00C51118 /* aplikasiiiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aplikasiiiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF845C012A2C7DBF00C51118 /* aplikasiiiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aplikasiiiUITests.swift; sourceTree = "<group>"; };
 		BF845C032A2C7DBF00C51118 /* aplikasiiiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aplikasiiiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BF845C122A2C831A00C51118 /* preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				BF845BE62A2C7DBE00C51118 /* aplikasiiiApp.swift */,
+				BF845C122A2C831A00C51118 /* preview.swift */,
 				BF845BE82A2C7DBE00C51118 /* ContentView.swift */,
 				BF845BEA2A2C7DBF00C51118 /* Assets.xcassets */,
 				BF845BEC2A2C7DBF00C51118 /* Preview Content */,
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF845C132A2C831A00C51118 /* preview.swift in Sources */,
 				BF845BE92A2C7DBE00C51118 /* ContentView.swift in Sources */,
 				BF845BE72A2C7DBE00C51118 /* aplikasiiiApp.swift in Sources */,
 			);
