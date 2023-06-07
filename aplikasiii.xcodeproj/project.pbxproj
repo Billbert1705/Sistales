@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4C3CFB32A30DB3C00D95627 /* screenqoni.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3CFB22A30DB3C00D95627 /* screenqoni.swift */; };
+		B4C3CFB52A30E59A00D95627 /* screenqoni2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3CFB42A30E59A00D95627 /* screenqoni2.swift */; };
 		BF845BE72A2C7DBE00C51118 /* aplikasiiiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF845BE62A2C7DBE00C51118 /* aplikasiiiApp.swift */; };
 		BF845BE92A2C7DBE00C51118 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF845BE82A2C7DBE00C51118 /* ContentView.swift */; };
 		BF845BEB2A2C7DBF00C51118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF845BEA2A2C7DBF00C51118 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B4C3CFB22A30DB3C00D95627 /* screenqoni.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenqoni.swift; sourceTree = "<group>"; };
+		B4C3CFB42A30E59A00D95627 /* screenqoni2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenqoni2.swift; sourceTree = "<group>"; };
 		BF845BE32A2C7DBE00C51118 /* aplikasiii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aplikasiii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF845BE62A2C7DBE00C51118 /* aplikasiiiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aplikasiiiApp.swift; sourceTree = "<group>"; };
 		BF845BE82A2C7DBE00C51118 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,10 +100,12 @@
 		BF845BE52A2C7DBE00C51118 /* aplikasiii */ = {
 			isa = PBXGroup;
 			children = (
+				BF845BEA2A2C7DBF00C51118 /* Assets.xcassets */,
 				BF845BE62A2C7DBE00C51118 /* aplikasiiiApp.swift */,
 				BF845C122A2C831A00C51118 /* preview.swift */,
 				BF845BE82A2C7DBE00C51118 /* ContentView.swift */,
-				BF845BEA2A2C7DBF00C51118 /* Assets.xcassets */,
+				B4C3CFB22A30DB3C00D95627 /* screenqoni.swift */,
+				B4C3CFB42A30E59A00D95627 /* screenqoni2.swift */,
 				BF845BEC2A2C7DBF00C51118 /* Preview Content */,
 			);
 			path = aplikasiii;
@@ -262,7 +268,9 @@
 			files = (
 				BF845C132A2C831A00C51118 /* preview.swift in Sources */,
 				BF845BE92A2C7DBE00C51118 /* ContentView.swift in Sources */,
+				B4C3CFB32A30DB3C00D95627 /* screenqoni.swift in Sources */,
 				BF845BE72A2C7DBE00C51118 /* aplikasiiiApp.swift in Sources */,
+				B4C3CFB52A30E59A00D95627 /* screenqoni2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
