@@ -201,7 +201,7 @@ struct Screen3: View {
 
 struct Screen4: View {
     @Binding var isNextScreenActive: Bool
-    @State private var isScreen4Active = false
+    @State private var isScreen5Active = false
     var body: some View {
         VStack {
             HStack {
