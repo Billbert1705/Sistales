@@ -84,7 +84,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isNextScreenActive = false
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -115,7 +115,7 @@ struct ContentView: View {
                 ) {
                     EmptyView()
                 }
-                .hidden()
+                    .hidden()
             )
             .navigationBarHidden(true)
         }
@@ -125,7 +125,7 @@ struct ContentView: View {
 struct Screen2: View {
     @Binding var isNextScreenActive: Bool
     @State private var isScreen3Active = false
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -157,7 +157,7 @@ struct Screen2: View {
             ) {
                 EmptyView()
             }
-            .hidden()
+                .hidden()
         )
         .navigationBarHidden(true)
     }
@@ -193,7 +193,7 @@ struct Screen3: View {
             ) {
                 EmptyView()
             }
-            .hidden()
+                .hidden()
         )
         .navigationBarHidden(true)
     }
@@ -228,11 +228,11 @@ struct Screen4: View {
             ) {
                 EmptyView()
             }
-            .hidden()
+                .hidden()
         )
         .navigationBarHidden(true)
     }
-    }
+}
 
 struct Screen5: View {
     @Binding var isNextScreenActive: Bool
@@ -418,27 +418,27 @@ struct Screen9: View {
         .background(Image("scene9")
             .resizable()
             .frame(width: 390, height: 856.5))
-//        .onTapGesture {
-//            isScreen10Active = true
-//        }
-//        .background(
-//            NavigationLink(
-//                destination: Screen8(isNextScreenActive: $isNextScreenActive),
-//                isActive: $isScreen10Active
-//            ) {
-//                EmptyView()
-//            }
-//                .hidden()
-//        )
-//        .navigationBarHidden(true)
-        }
+        //        .onTapGesture {
+        //            isScreen10Active = true
+        //        }
+        //        .background(
+        //            NavigationLink(
+        //                destination: Screen8(isNextScreenActive: $isNextScreenActive),
+        //                isActive: $isScreen10Active
+        //            ) {
+        //                EmptyView()
+        //            }
+        //                .hidden()
+        //        )
+        //        .navigationBarHidden(true)
     }
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
+}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
+}
 
 
 
-    
+
