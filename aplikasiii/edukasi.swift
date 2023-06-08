@@ -36,14 +36,15 @@ struct edukasi: View {
                                     .frame(width: 174, height: 167)
                                     .padding(.top,50)
                                 
-                                Text("Pernah ga sih denger kalo menstruasi ga boleh minum minuman dingin? karena katanya dianggap bisa membekukan darah dan menggangu siklus menstruasi?\nBener ga sih?")
+                                Text("Pernah ga sih denger\nkalo menstruasi ga boleh minum minuman dingin?\nkarena katanya dianggap bisa membekukan darah dan menggangu siklus menstruasi?\n\nBener ga sih?")
                                     .font(.system(size: 17))
                                     .padding(.top,50)
-                                    .padding(.horizontal, 60)
+                                    .padding(.horizontal, 30)
                                 
                                 
                             }
                             .padding(.leading,20)
+                            .padding(.trailing,20)
                             .padding(.bottom, 100)
                             .frame(width: 343, height: 557)
                         }
@@ -58,15 +59,16 @@ struct edukasi: View {
                                     .frame(width: 174, height: 167)
                                     .padding(.top,50)
                                 
-                                Text("Pernah ga sih denger kalo menstruasi ga boleh minum minuman dingin? karena katanya dianggap bisa membekukan darah dan menggangu siklus menstruasi?\nBener ga sih?")
+                                Text("Ternyata, anggapan minum dingin saat menstruasi nyebabin pembekuan darah dan gangguan siklus menstruasi adalah mitos belaka.\n\nFakta sebenarnya siklus menstruasi wanita diatur dan dipengaruhi oleh keseimbangan hormon estrogen dan progesteron di dalam tubuh.")
                                     .font(.system(size: 17))
-                                    .padding(.top,50)
-                                    .padding(.horizontal, 60)
+                                    .padding(.top,10)
+                                    .padding(.horizontal, 30)
                                 
                                 
                             }
                             .padding(.leading,20)
-                            .padding(.bottom, 100)
+                            .padding(.trailing,20)
+                            .padding(.bottom, 70)
                             .frame(width: 343, height: 557)
                         }
                         ZStack{
