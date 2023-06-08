@@ -9,41 +9,36 @@ import SwiftUI
 
 struct screenqoni: View {
     @State private var size = UIScreen.main.bounds.size
-    //@State var bubble = 1
     @State var diniMuncul = false
     @State var buttonMuncul = false
     @State private var tapCount = 0
-    
-    //    func incrBubble() {
-    //        if bubble <= 2{
-    //            bubble += 1
-    //        }
-    
-    
+//    @State private var slideOffset: CGFloat = 0
+
     var body: some View {
-        
-        
-        
         ZStack{
             Image("kantin")
                 .resizable()
                 .ignoresSafeArea()
+            
             VStack{
                 Image("imageSound")
                     .resizable()
                     .frame(width: 43, height: 43)
                     .padding(.horizontal, 15)
                     .frame(maxWidth: .infinity, alignment: .trailing)
+                
                 Image("diniEs")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 350, height: 1000)
                     .position(x: size.width/2.3, y: size.height/2)
                     .opacity(tapCount > 0 ? 1 : 0)
-//                    .opacity(tapCount == 1 || tapCount == 2 ? 1 : 0) ALTERNATIF AJE
-                
+//                    .offset(x: slideOffset, y: 0)
+//                    .animation(.easeInOut) // Apply animation to the offset
+                    
                 Spacer()
-                if tapCount == 0{
+                
+                if tapCount == 0 {
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 343, height: 80)
@@ -51,9 +46,8 @@ struct screenqoni: View {
                         Text("Sesampai di kantin..")
                     }
                     .padding(.bottom, 70)
-                }else{
+                } else {
                     ZStack{
-                        
                         Image("bubblekiri")
                             .resizable()
                             .frame(width: 343, height: 160)
@@ -64,11 +58,15 @@ struct screenqoni: View {
                             .font(.system(size: 17))
                             .padding(.top,5)
                             .padding(.horizontal, 40)
+                            
                     }
+                    .padding(.bottom,40)
                 }
             }
+            
             VStack{
                 Spacer()
+                
                 Button(action:{}, label:{
                     ZStack{
                         RoundedRectangle(cornerRadius: 15)
@@ -99,20 +97,21 @@ struct screenqoni: View {
                 
                 Spacer()
             }
-        }.onTapGesture{
+        }
+        .onTapGesture{
             tapCount += 1
-            //            incrBubble()
             diniMuncul = true
             buttonMuncul = true
             
+//            withAnimation {
+//                slideOffset += 100 // Adjust the slide offset value as needed
+//            }
         }
     }
-    
-    
-    
-    struct screenqoni_Previews: PreviewProvider {
-        static var previews: some View {
-            screenqoni()
-        }
+}
+
+struct screenqoni_Previews: PreviewProvider {
+    static var previews: some View {
+        screenqoni()
     }
 }

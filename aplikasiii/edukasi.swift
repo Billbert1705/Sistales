@@ -93,10 +93,11 @@ struct edukasi: View {
                         }
                     }
                     //                .padding(.top,40)
-                    .padding(.bottom, 115)
+                    .padding(.bottom, 70)
                     .padding(.leading,25)
-                    .padding(.trailing,25)
-                }
+                    .padding(.trailing,25)}
+                Text("Tap untuk Kembali!")
+                    .padding(.bottom, 15)
             }
         }
         
