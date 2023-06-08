@@ -12,8 +12,8 @@ struct screenqoni: View {
     @State var diniMuncul = false
     @State var buttonMuncul = false
     @State private var tapCount = 0
-//    @State private var slideOffset: CGFloat = 0
-
+    @State private var slideOffset: CGFloat = 0
+    
     var body: some View {
         ZStack{
             Image("kantin")
@@ -30,12 +30,12 @@ struct screenqoni: View {
                 Image("diniEs")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 350, height: 1000)
-                    .position(x: size.width/2.3, y: size.height/2)
+                    .frame(width: 400, height: 1000)
+                    .position(x: size.width/2, y: size.height/2)
                     .opacity(tapCount > 0 ? 1 : 0)
-//                    .offset(x: slideOffset, y: 0)
-//                    .animation(.easeInOut) // Apply animation to the offset
-                    
+                    .offset(x: tapCount > 0 ? 0 : 50, y: 0)
+                    .animation(.easeInOut) // Apply animation to the offset
+                
                 Spacer()
                 
                 if tapCount == 0 {
@@ -58,7 +58,7 @@ struct screenqoni: View {
                             .font(.system(size: 17))
                             .padding(.top,5)
                             .padding(.horizontal, 40)
-                            
+                        
                     }
                     .padding(.bottom,40)
                 }
@@ -79,7 +79,8 @@ struct screenqoni: View {
                 }
                 )
                 .foregroundColor(Color("pink"))
-                .opacity(tapCount == 2 ? 1 : 0)
+                .opacity(buttonMuncul == true ? 1 : 0)
+                
                 
                 Button(action:{}, label:{
                     ZStack{
@@ -93,25 +94,27 @@ struct screenqoni: View {
                 }
                 )
                 .foregroundColor(Color("pink"))
-                .opacity(tapCount == 2 ? 1 : 0)
+                .opacity(buttonMuncul == true ? 1 : 0)
                 
                 Spacer()
             }
         }
         .onTapGesture{
-            tapCount += 1
-            diniMuncul = true
-            buttonMuncul = true
-            
-//            withAnimation {
+            if(tapCount == 1){
+                buttonMuncul = true
+            }
+            withAnimation {
+                tapCount += 1
+                diniMuncul = true
 //                slideOffset += 100 // Adjust the slide offset value as needed
-//            }
+                //            }
+            }
         }
     }
-}
-
-struct screenqoni_Previews: PreviewProvider {
-    static var previews: some View {
-        screenqoni()
+    
+    struct screenqoni_Previews: PreviewProvider {
+        static var previews: some View {
+            screenqoni()
+        }
     }
 }
