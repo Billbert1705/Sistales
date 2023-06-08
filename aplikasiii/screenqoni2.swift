@@ -60,6 +60,7 @@ struct screenqoni2: View {
                 }
                 .foregroundColor(.black)
             }
+            .navigationBarBackButtonHidden(true)
             .buttonStyle(PlainButtonStyle())
             
         }

@@ -68,6 +68,7 @@ struct edukasi_2: View {
         }
         .navigationBarBackButtonHidden(true)
         .foregroundColor(.black)
+        .buttonStyle(PlainButtonStyle())
         }
     }
     struct edukasi_2_Previews: PreviewProvider {

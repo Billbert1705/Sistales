@@ -118,6 +118,7 @@ struct edukasi: View {
         }
         .navigationBarBackButtonHidden(true)
         .foregroundColor(.black)
+        .buttonStyle(PlainButtonStyle())
     }
 }
     
