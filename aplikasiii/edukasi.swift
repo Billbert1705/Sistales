@@ -100,7 +100,7 @@ struct edukasi: View {
                     .padding(.bottom, 15)
             }
         }
-        
+        .navigationBarBackButtonHidden(true)
     }
 }
     
@@ -109,4 +109,3 @@ struct edukasi: View {
             edukasi()
         }
     }
-
