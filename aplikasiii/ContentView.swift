@@ -4,82 +4,7 @@
 //
 //  Created by Billbert Pohandy on 04/06/23.
 //
-//import SwiftUI
-//
-//struct ContentView: View {
-//    @State private var isNextScreenActive = false
-//
-//    var body: some View {
-//        NavigationView {
-//            VStack {
-//                HStack {
-//                    Spacer()
-//                    Image("imageSound")
-//                        .resizable()
-//                        .frame(width: 43, height: 43)
-//                }
-//                Spacer()
-//                GroupBox {
-//                    Text("EPISODE 1 - TEMANKU BARU SAJA MENSTRUASI!")
-//                }
-//                Spacer()
-//                Text("Tap untuk lanjut!")
-//            }
-//            .padding()
-//            .frame(maxWidth: .infinity, maxHeight: .infinity)
-//            .background(Image("imageBackground"))
-//            .onTapGesture {
-//                isNextScreenActive = true
-//            }
-//            .background(
-//                NavigationLink(
-//                    destination: Screen2(),
-//                    isActive: $isNextScreenActive
-//                ) {
-//                    EmptyView()
-//                }
-//            )
-//            .navigationBarHidden(true)
-//        }
-//    }
-//}
-//
-//struct Screen2: View {
-//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-//
-//    var body: some View {
-//        VStack {
-//            HStack {
-//                Spacer()
-//                Image("imageSound")
-//                    .resizable()
-//                    .frame(width: 43, height: 43)
-//            }
-//            Spacer()
-//            Spacer()
-//            Spacer()
-//            Spacer()
-//            Spacer()
-//            Spacer()
-//            GroupBox {
-//                Text("Di SMP Harapan Bangsa, kamu dan sahabatmu, Dini, sedang berbincang saat waktu istirahat.")
-//                    .multilineTextAlignment(.center)
-//            }
-//            Spacer()
-//        }
-//        .padding()
-//        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//        .background(Image("scene31"))
-//        .navigationBarBackButtonHidden(true)
-//        .navigationBarItems(leading: EmptyView())
-//    }
-//}
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+
 import SwiftUI
 
 struct ContentView: View {
@@ -302,44 +227,23 @@ struct Screen6: View {
         .navigationBarHidden(true)
     }
 }
-struct Screen7: View {
-    @Binding var isNextScreenActive: Bool
-    @State private var isScreen8Active = false
-    var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
-            }
-            Spacer()
-            Spacer()
-        }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("scene7")
-            .resizable()
-            .frame(width: 390, height: 856.5))
-        .onTapGesture {
-            isScreen8Active = true
-        }
-        .background(
-            NavigationLink(
-                destination: Screen8(isNextScreenActive: $isNextScreenActive),
-                isActive: $isScreen8Active
-            ) {
-                EmptyView()
-            }
-                .hidden()
-        )
-        .navigationBarHidden(true)
+
+struct EqualSizeButtonStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: 314, height: 57)
+//            .padding()
+            .background(Color(red: 253/255, green: 174/255, blue: 203/255))
+            .foregroundColor(.black)
+            .cornerRadius(10)
     }
 }
-struct Screen8: View {
+
+struct Screen7: View {
     @Binding var isNextScreenActive: Bool
     @State private var isPopUpVisible = false
-    
+    @State private var showAlert = false
+
     var body: some View {
         VStack {
             HStack {
@@ -368,27 +272,22 @@ struct Screen8: View {
                                     .edgesIgnoringSafeArea(.all)
                                 VStack(spacing: 20) {
                                     Button(action: {
-                                        isNextScreenActive = false // Set to false first to close the pop-up
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                            isNextScreenActive = true // Set to true to navigate to Screen 9
-                                        }
+                                        showAlert = true
                                     }) {
-                                        Text("Go to Screen 9")
-                                            .foregroundColor(.white)
-                                            .padding()
-                                            .background(Color.blue)
-                                            .cornerRadius(10)
+                                        Text("MEMBIARKAN DINI BEGITU SAJA")
                                     }
+                                    .modifier(EqualSizeButtonStyle())
+
                                     Button(action: {
-                                        // Handle action for Screen 10
+                                        isPopUpVisible = false
+                                        isNextScreenActive = true
                                     }) {
-                                        Text("Go to Screen 10")
-                                            .foregroundColor(.white)
-                                            .padding()
-                                            .background(Color.green)
-                                            .cornerRadius(10)
+                                        Text("MENCOBA MENENANGKAN & MENGAJAK DINI KE TOILET")
                                     }
+                                    .modifier(EqualSizeButtonStyle())
                                 }
+                              
+                                
                             }
                             .transition(.opacity)
                         }
@@ -396,12 +295,20 @@ struct Screen8: View {
                 )
         )
         .navigationBarHidden(true)
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Yakin?"),
+                message: Text("Masa Dini dibiarin gitu aja..."),
+                dismissButton: .default(Text("Kembali"))
+            )
+        }
     }
 }
 
-struct Screen9: View {
+
+struct Screen8: View {
     @Binding var isNextScreenActive: Bool
-    @State private var isScreen10Active = false
+    @State private var isScreen9Active = false
     var body: some View {
         VStack {
             HStack {
