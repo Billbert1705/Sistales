@@ -10,6 +10,7 @@
 		68241DCC2A315C720023B109 /* NextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68241DCB2A315C720023B109 /* NextScreen.swift */; };
 		B4C3CFB32A30DB3C00D95627 /* screenqoni.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3CFB22A30DB3C00D95627 /* screenqoni.swift */; };
 		B4C3CFB52A30E59A00D95627 /* screenqoni2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3CFB42A30E59A00D95627 /* screenqoni2.swift */; };
+		B4D915062A31EDF400CB2AA9 /* edukasi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D915052A31EDF400CB2AA9 /* edukasi.swift */; };
 		BF3F476F2A31E03D00760C22 /* screenbillbert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3F476E2A31E03D00760C22 /* screenbillbert.swift */; };
 		BF845BE72A2C7DBE00C51118 /* aplikasiiiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF845BE62A2C7DBE00C51118 /* aplikasiiiApp.swift */; };
 		BF845BE92A2C7DBE00C51118 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF845BE82A2C7DBE00C51118 /* ContentView.swift */; };
@@ -42,6 +43,7 @@
 		68241DCB2A315C720023B109 /* NextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextScreen.swift; sourceTree = "<group>"; };
 		B4C3CFB22A30DB3C00D95627 /* screenqoni.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenqoni.swift; sourceTree = "<group>"; };
 		B4C3CFB42A30E59A00D95627 /* screenqoni2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenqoni2.swift; sourceTree = "<group>"; };
+		B4D915052A31EDF400CB2AA9 /* edukasi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = edukasi.swift; sourceTree = "<group>"; };
 		BF3F476E2A31E03D00760C22 /* screenbillbert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenbillbert.swift; sourceTree = "<group>"; };
 		BF845BE32A2C7DBE00C51118 /* aplikasiii.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aplikasiii.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF845BE62A2C7DBE00C51118 /* aplikasiiiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aplikasiiiApp.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				BF845C122A2C831A00C51118 /* preview.swift */,
 				BF845BE82A2C7DBE00C51118 /* ContentView.swift */,
 				B4C3CFB22A30DB3C00D95627 /* screenqoni.swift */,
+				B4D915052A31EDF400CB2AA9 /* edukasi.swift */,
 				B4C3CFB42A30E59A00D95627 /* screenqoni2.swift */,
 				68241DCB2A315C720023B109 /* NextScreen.swift */,
 				BF845BEC2A2C7DBF00C51118 /* Preview Content */,
@@ -278,6 +281,7 @@
 				BF845BE72A2C7DBE00C51118 /* aplikasiiiApp.swift in Sources */,
 				68241DCC2A315C720023B109 /* NextScreen.swift in Sources */,
 				BF3F476F2A31E03D00760C22 /* screenbillbert.swift in Sources */,
+				B4D915062A31EDF400CB2AA9 /* edukasi.swift in Sources */,
 				B4C3CFB52A30E59A00D95627 /* screenqoni2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

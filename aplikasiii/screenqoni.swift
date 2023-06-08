@@ -34,16 +34,13 @@ struct screenqoni: View {
                     .frame(width: 43, height: 43)
                     .padding(.horizontal, 15)
                     .frame(maxWidth: .infinity, alignment: .trailing)
-                Image("dini1")
+                Image("diniEs")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 225)
-                    .position(x: size.width/3.6, y: size.height/1.6)
+                    .frame(width: 350, height: 1000)
+                    .position(x: size.width/2.3, y: size.height/2)
                     .opacity(tapCount > 0 ? 1 : 0)
 //                    .opacity(tapCount == 1 || tapCount == 2 ? 1 : 0) ALTERNATIF AJE
-                Image("es")
-                
-                
                 
                 Spacer()
                 if tapCount == 0{
