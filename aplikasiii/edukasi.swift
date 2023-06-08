@@ -41,7 +41,6 @@ struct edukasi: View {
                                     .padding(.top,50)
                                     .padding(.horizontal, 30)
                                 
-                                
                             }
                             .padding(.leading,20)
                             .padding(.trailing,20)
@@ -80,25 +79,23 @@ struct edukasi: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 174, height: 167)
-                                    .padding(.top,50)
+//                                    .padding(.top,5)
                                 
-                                Text("Pernah ga sih denger kalo menstruasi ga boleh minum minuman dingin? karena katanya dianggap bisa membekukan darah dan menggangu siklus menstruasi?\nBener ga sih?")
+                                Text("Menstruasi berhubungan dengan sistem reproduksi wanita, sedangkan makanan & minuman berhubungan dengan sistem pencernaan.\n\n Jadi, mengonsumsi minuman dingin tidak berpengaruh pada keterlambatan menstruasi seseorang.\n\nMenstruasi yang datang terlambat disebabkan oleh tiga hal, yaitu adanya masalah pada dinding rahim, masalah hormonal dari indung telur, dan masalah psikologis seperti stres.")
                                     .font(.system(size: 17))
-                                    .padding(.top,50)
-                                    .padding(.horizontal, 60)
-                                //                                    .padding(.trailing, 25)
-                                
-                                
+//                                    .padding(.top,10)
+                                    .padding(.horizontal, 20)
                             }
                             .padding(.leading,20)
-                            .padding(.bottom, 100)
+                            .padding(.trailing,20)
+                            .padding(.bottom, 20)
                             .frame(width: 343, height: 557)
-                            .padding(.trailing, 50)
                         }
                     }
                     //                .padding(.top,40)
                     .padding(.bottom, 115)
                     .padding(.leading,25)
+                    .padding(.trailing,25)
                 }
             }
         }
