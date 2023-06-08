@@ -11,7 +11,7 @@ struct screenqoni: View {
     @State private var size = UIScreen.main.bounds.size
     @State var diniMuncul = false
     @State var buttonMuncul = false
-    @State private var tapCount = 0
+    @State var tapCount = 0
     @State private var slideOffset: CGFloat = 0
     
     var body: some View {
@@ -115,9 +115,10 @@ struct screenqoni: View {
                     //                slideOffset += 100 // Adjust the slide offset value as needed
                     //            }
                 }
-            }
+            }.navigationBarBackButtonHidden(true)
             
         }
+        
     }
     
     struct screenqoni_Previews: PreviewProvider {

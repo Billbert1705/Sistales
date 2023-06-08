@@ -17,7 +17,7 @@ struct edukasi_2: View {
                 VStack{
                     HStack{
                         NavigationLink{
-                            screenqoni()
+                            screenqoni(buttonMuncul: true, tapCount : 1)
                         }label: {
                             Image(systemName: "chevron.left")
                                 .resizable()
@@ -64,6 +64,8 @@ struct edukasi_2: View {
                     .padding(.bottom, 15)}
             }
         }
+        .navigationBarBackButtonHidden(true)
+
         }
     }
     struct edukasi_2_Previews: PreviewProvider {
@@ -71,3 +73,4 @@ struct edukasi_2: View {
             edukasi_2()
         }
     }
+//}
