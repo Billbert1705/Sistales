@@ -10,6 +10,9 @@ import SwiftUI
 struct edukasi_2: View {
     var body: some View {
         NavigationStack{
+            NavigationLink{
+                screenqoni2()
+            }label:{
             ZStack{
                 Image("bgedu")
                     .resizable()
@@ -24,7 +27,6 @@ struct edukasi_2: View {
                                 .scaledToFit()
                                 .frame(height: 34)
                                 .padding(.horizontal, 20)
-//                                .frame(maxWidth: .infinity, alignment: .leading)
                                 .foregroundColor(.black)
                         }
                         
@@ -65,7 +67,7 @@ struct edukasi_2: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-
+        .foregroundColor(.black)
         }
     }
     struct edukasi_2_Previews: PreviewProvider {
@@ -73,4 +75,4 @@ struct edukasi_2: View {
             edukasi_2()
         }
     }
-//}
+}
