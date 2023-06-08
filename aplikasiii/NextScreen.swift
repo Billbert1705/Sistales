@@ -245,6 +245,7 @@ struct Screen21: View {
         .background(Image("scene21")
             .resizable()
             .frame(width: 390, height: 856.5))
+        .navigationBarHidden(true)
         //        .onTapGesture {
         //            isScreen10Active = true
         //        }

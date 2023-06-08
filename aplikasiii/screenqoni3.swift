@@ -11,7 +11,7 @@ struct screenqoni3: View {
     var body: some View {
         NavigationStack{
             NavigationLink{
-                NextScreen()
+                NextScreen().navigationBarBackButtonHidden(true)
             } label: {
                 ZStack{
                     Image("screen16")
@@ -19,11 +19,16 @@ struct screenqoni3: View {
                         .ignoresSafeArea()
                     VStack {
                         HStack{
-                            Image(systemName: "chevron.left")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 34)
-                                .padding(.horizontal, 20)
+                            NavigationLink{
+                                screenqoni2()
+                            }label: {
+                                Image(systemName: "chevron.left")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 34)
+                                    .padding(.horizontal, 20)
+                            }
+                            .foregroundColor(.black)
                             Image("imageSound")
                                 .resizable()
                                 .frame(width: 43, height: 43)
@@ -35,7 +40,9 @@ struct screenqoni3: View {
                 }
                 .navigationBarBackButtonHidden(true)
             }
+            .navigationBarBackButtonHidden(true)
             .buttonStyle(PlainButtonStyle())
+            
         }
     }
     struct screenqoni3_Previews: PreviewProvider {
