@@ -75,7 +75,7 @@ struct Screen17B: View {
         }
         .background(
             NavigationLink(
-                destination: Screen18(isNextScreenActive: $isNextScreenActive),
+                destination: Screen18(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true),
                 isActive: $isScreen17BActive
             ) {
                 EmptyView()
@@ -111,7 +111,7 @@ struct Screen18: View {
         }
         .background(
             NavigationLink(
-                destination: Screen19(isNextScreenActive: $isNextScreenActive),
+                destination: Screen19(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true),
                 isActive: $isScreen18Active
             ) {
                 EmptyView()

@@ -7,17 +7,35 @@
 
 import SwiftUI
 
+struct AudioToggleButton: View {
+    @Binding var isAudioEnabled: Bool
+
+    var body: some View {
+        Button(action: {
+            isAudioEnabled.toggle()
+        }) {
+            Image(systemName: isAudioEnabled ? "speaker.slash.fill" : "speaker.wave.2.fill")
+                .resizable()
+                .frame(width: 43, height: 43)
+        }
+    }
+}
 struct ContentView: View {
     @State private var isNextScreenActive = false
-    
+    @State private var isAudioEnabled = true
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
                     Spacer()
-                    Image("imageSound")
-                        .resizable()
-                        .frame(width: 43, height: 43)
+                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    if isAudioEnabled {
+//                                            Button(action: {
+//                                                isAudioEnabled.toggle()
+//                                            }) {
+//                                                Image("imageSound")
+//                                                    .resizable()
+//                                                    .frame(width: 43, height: 43)
                 }
                 Spacer()
                 Spacer()
@@ -50,14 +68,16 @@ struct ContentView: View {
 struct Screen2: View {
     @Binding var isNextScreenActive: Bool
     @State private var isScreen3Active = false
-    
+    @State private var isAudioEnabled = true
+
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
+                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                Image("imageSound")
+//                    .resizable()
+//                    .frame(width: 43, height: 43)
             }
             Spacer()
             Spacer()
@@ -90,22 +110,24 @@ struct Screen2: View {
 
 
 struct Screen3: View {
+    @State private var isAudioEnabled = true
     @Binding var isNextScreenActive: Bool
     @State private var isScreen4Active = false
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
+                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                Image("imageSound")
+//                    .resizable()
+//                    .frame(width: 43, height: 43)
             }
             Spacer()
             Spacer()
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("scene32")
+        .background(Image("scene322")
             .resizable()
             .frame(width: 390, height: 856.5))
         .onTapGesture {
@@ -125,15 +147,17 @@ struct Screen3: View {
 }
 
 struct Screen4: View {
+    @State private var isAudioEnabled = true
     @Binding var isNextScreenActive: Bool
     @State private var isScreen5Active = false
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
+                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                Image("imageSound")
+//                    .resizable()
+//                    .frame(width: 43, height: 43)
             }
             Spacer()
             Spacer()
@@ -160,15 +184,17 @@ struct Screen4: View {
 }
 
 struct Screen5: View {
+    @State private var isAudioEnabled = true
     @Binding var isNextScreenActive: Bool
     @State private var isScreen6Active = false
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
+                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                Image("imageSound")
+//                    .resizable()
+//                    .frame(width: 43, height: 43)
             }
             Spacer()
             Spacer()
@@ -194,15 +220,17 @@ struct Screen5: View {
     }
 }
 struct Screen6: View {
+    @State private var isAudioEnabled = true
     @Binding var isNextScreenActive: Bool
     @State private var isScreen7Active = false
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
+                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                Image("imageSound")
+//                    .resizable()
+//                    .frame(width: 43, height: 43)
             }
             Spacer()
             Spacer()
@@ -217,14 +245,17 @@ struct Screen6: View {
         }
         .background(
             NavigationLink(
-                destination: Screen7(isNextScreenActive: $isNextScreenActive),
+                destination: Screen7(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true),
                 isActive: $isScreen7Active
             ) {
                 EmptyView()
+
             }
                 .hidden()
+
         )
         .navigationBarHidden(true)
+
     }
 }
 
@@ -240,82 +271,96 @@ struct EqualSizeButtonStyle: ViewModifier {
 }
 
 struct Screen7: View {
+    @State private var isAudioEnabled = true
     @Binding var isNextScreenActive: Bool
     @State private var isPopUpVisible = false
     @State private var showAlert = false
 
     var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
-            }
-            Spacer()
-            Spacer()
-        }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            Image("scene71")
-                .resizable()
-                .frame(width: 390, height: 856.5)
-                .onTapGesture {
-                    isPopUpVisible = true
+        NavigationView{
+            VStack {
+                HStack {
+                    Spacer()
+                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    Image("imageSound")
+//                        .resizable()
+//                        .frame(width: 43, height: 43)
                 }
-                .overlay(
-                    VStack {
-                        if isPopUpVisible {
-                            ZStack {
-                                Color.black.opacity(0.6)
-                                    .edgesIgnoringSafeArea(.all)
-                                VStack(spacing: 20) {
-                                    Button(action: {
-                                        showAlert = true
-                                    }) {
-                                        Text("MEMBIARKAN DINI BEGITU SAJA")
-                                    }
-                                    .modifier(EqualSizeButtonStyle())
-
-                                    Button(action: {
-                                        isPopUpVisible = false
-                                        isNextScreenActive = true
-                                    }) {
-                                        Text("MENCOBA MENENANGKAN & MENGAJAK DINI KE TOILET")
-                                    }
-                                    .modifier(EqualSizeButtonStyle())
-                                }
-                              
-                                
-                            }
-                            .transition(.opacity)
-                        }
+                Spacer()
+                Spacer()
+            }
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(
+                Image("scene71")
+                    .resizable()
+                    .frame(width: 390, height: 856.5)
+                    .onTapGesture {
+                        isPopUpVisible = true
                     }
-                )
-        )
-        .navigationBarHidden(true)
-        .alert(isPresented: $showAlert) {
-            Alert(
-                title: Text("Yakin?"),
-                message: Text("Masa Dini dibiarin gitu aja..."),
-                dismissButton: .default(Text("Kembali"))
+                    .overlay(
+                        VStack {
+                            if isPopUpVisible {
+                                ZStack {
+//                                    Color.black.opacity(0.6)
+//                                        .edgesIgnoringSafeArea(.all)
+                                    VStack(spacing: 20) {
+                                        Button(action: {
+                                            showAlert = true
+                                        }) {
+                                            Text("MEMBIARKAN DINI BEGITU SAJA")
+                                        }
+                                        .modifier(EqualSizeButtonStyle())
+                                        NavigationLink(destination: Screen8(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true), label: {
+                                            Text("MENCOBA MENENANGKAN & MENGAJAK DINI KE TOILET")
+                                                .modifier(EqualSizeButtonStyle())
+
+
+                                        })
+                                        .navigationBarBackButtonHidden(true)
+
+//                                        Button(action: {
+//                                            isPopUpVisible = false
+//                                            isNextScreenActive = true
+//                                        }) {
+//
+//                                        }
+//                                        .modifier(EqualSizeButtonStyle())
+                                    }
+
+
+                                }
+                                .transition(.opacity)
+                            }
+                        }
+                    )
             )
+            .navigationBarHidden(true)
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Yakin?"),
+                    message: Text("Masa Dini dibiarin gitu aja..."),
+                    dismissButton: .default(Text("Kembali"))
+                )
+            }
+
         }
-    }
+            }
 }
 
 
 struct Screen8: View {
+    @State private var isAudioEnabled = true
     @Binding var isNextScreenActive: Bool
     @State private var isScreen9Active = false
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
+                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                Image("imageSound")
+//                    .resizable()
+//                    .frame(width: 43, height: 43)
             }
             Spacer()
             Spacer()
@@ -324,21 +369,7 @@ struct Screen8: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("scene9")
             .resizable()
-            .frame(width: 390, height: 856.5))
-        //        .onTapGesture {
-        //            isScreen10Active = true
-        //        }
-        //        .background(
-        //            NavigationLink(
-        //                destination: Screen8(isNextScreenActive: $isNextScreenActive),
-        //                isActive: $isScreen10Active
-        //            ) {
-        //                EmptyView()
-        //            }
-        //                .hidden()
-        //        )
-        //        .navigationBarHidden(true)
-    }
+            .frame(width: 390, height: 856.5))    }
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
