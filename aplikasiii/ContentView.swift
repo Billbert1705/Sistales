@@ -62,10 +62,12 @@ struct ContentView: View {
                     Spacer()
                     Text("Tap untuk lanjut!")
                         .padding(.bottom, 40)
-            }
+                }
                 .padding()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-
+                .background(Image("scene3")
+                    .resizable()
+                    .frame(width: 390, height: 856.5))
                 .onTapGesture {
                     isNextScreenActive = true
                 }
