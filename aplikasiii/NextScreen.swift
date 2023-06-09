@@ -441,9 +441,24 @@ struct PerformVibrationOnAppear: ViewModifier {
     }
 }
 
+func performVibration() {
+    let generator = UINotificationFeedbackGenerator()
+    generator.notificationOccurred(.error)
+}
+
 extension View {
     func performVibrationOnAppear() -> some View {
         modifier(PerformVibrationOnAppear())
+    }
+}
+struct EqualSizeButtonStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: 314, height: 57)
+        //            .padding()
+            .background(Color(red: 253/255, green: 174/255, blue: 203/255))
+            .foregroundColor(.black)
+            .cornerRadius(10)
     }
 }
 
