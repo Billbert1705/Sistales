@@ -27,15 +27,23 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 HStack {
+                    Image(systemName: "chevron.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 34)
+                        .padding(.horizontal, 10)
+                        .foregroundColor(.black)
                     Spacer()
                     AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-//                    if isAudioEnabled {
-//                                            Button(action: {
-//                                                isAudioEnabled.toggle()
-//                                            }) {
-//                                                Image("imageSound")
-//                                                    .resizable()
-//                                                    .frame(width: 43, height: 43)
+                        .foregroundColor(.black)
+                    //                    if isAudioEnabled {
+                    //                                            Button(action: {
+                    //                                                isAudioEnabled.toggle()
+                    //                                            }) {
+                    //                                                Image("imageSound")
+                    //                                                    .resizable()
+                    //                                                    .frame(width: 43, height: 43)
+                    
                 }
                 Spacer()
                 Spacer()
@@ -73,8 +81,15 @@ struct Screen2: View {
     var body: some View {
         VStack {
             HStack {
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 34)
+                    .padding(.horizontal, 10)
+                    .foregroundColor(.black)
                 Spacer()
                 AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                    .foregroundColor(.black)
 //                Image("imageSound")
 //                    .resizable()
 //                    .frame(width: 43, height: 43)
@@ -116,8 +131,15 @@ struct Screen3: View {
     var body: some View {
         VStack {
             HStack {
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 34)
+                    .padding(.horizontal, 10)
+                    .foregroundColor(.black)
                 Spacer()
                 AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                    .foregroundColor(.black)
 //                Image("imageSound")
 //                    .resizable()
 //                    .frame(width: 43, height: 43)
@@ -153,8 +175,15 @@ struct Screen4: View {
     var body: some View {
         VStack {
             HStack {
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 34)
+                    .padding(.horizontal, 10)
+                    .foregroundColor(.black)
                 Spacer()
                 AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                    .foregroundColor(.black)
 //                Image("imageSound")
 //                    .resizable()
 //                    .frame(width: 43, height: 43)
@@ -190,8 +219,15 @@ struct Screen5: View {
     var body: some View {
         VStack {
             HStack {
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 34)
+                    .padding(.horizontal, 10)
+                    .foregroundColor(.black)
                 Spacer()
                 AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                    .foregroundColor(.black)
 //                Image("imageSound")
 //                    .resizable()
 //                    .frame(width: 43, height: 43)
@@ -226,8 +262,15 @@ struct Screen6: View {
     var body: some View {
         VStack {
             HStack {
+                Image(systemName: "chevron.left")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 34)
+                    .padding(.horizontal, 10)
+                    .foregroundColor(.black)
                 Spacer()
                 AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                    .foregroundColor(.black)
 //                Image("imageSound")
 //                    .resizable()
 //                    .frame(width: 43, height: 43)
@@ -280,8 +323,15 @@ struct Screen7: View {
         NavigationView{
             VStack {
                 HStack {
+                    Image(systemName: "chevron.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 34)
+                        .padding(.horizontal, 10)
+                        .foregroundColor(.black)
                     Spacer()
                     AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                        .foregroundColor(.black)
 //                    Image("imageSound")
 //                        .resizable()
 //                        .frame(width: 43, height: 43)
