@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct NextScreen: View {
     @State private var isNextScreenActive = false
@@ -41,50 +42,130 @@ struct NextScreen: View {
                     .hidden()
             )
             .navigationBarHidden(true)
+            .ignoresSafeArea()
         }
     }
 }
 
+//struct Screen17B: View {
+//    @Binding var isNextScreenActive: Bool
+//    @State private var isScreen17BActive = false
+//
+//    var body: some View {
+//        VStack {
+//            HStack {
+//                Spacer()
+//                Image("imageSound")
+//                    .resizable()
+//                    .frame(width: 43, height: 43)
+//            }
+//            Spacer()
+//            Spacer()
+//            Spacer()
+//            Spacer()
+//            Spacer()
+//            Spacer()
+//            Spacer()
+//        }
+//        .padding()
+//        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//        .background(Image("scene17B")
+//            .resizable()
+//            .frame(width: 390, height: 856.5))
+//        .onTapGesture {
+//            isScreen17BActive = true
+//
+//        }
+//        .background(
+//            NavigationLink(
+//                destination: Screen18(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true),
+//                isActive: $isScreen17BActive
+//            ) {
+//                EmptyView()
+//            }
+//                .hidden()
+//        )
+//        .navigationBarHidden(true)
+//    }
+//}
 struct Screen17B: View {
+    @State private var isAudioEnabled = true
     @Binding var isNextScreenActive: Bool
-    @State private var isScreen17BActive = false
+    @State private var isPopUpVisible = false
+    @State private var showAlert = false
     
     var body: some View {
-        VStack {
-            HStack {
+        NavigationView{
+            VStack {
+                HStack {
+                    Spacer()
+                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                    //                    Image("imageSound")
+                    //                        .resizable()
+                    //                        .frame(width: 43, height: 43)
+                }
                 Spacer()
-                Image("imageSound")
+                Spacer()
+            }
+            .padding()
+            .navigationBarHidden(true)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(
+                Image("scene17B")
                     .resizable()
-                    .frame(width: 43, height: 43)
+                    .frame(width: 390, height: 856.5)
+                    .onTapGesture {
+                        isPopUpVisible = true
+                    }
+                    .overlay(
+                        VStack {
+                            if isPopUpVisible {
+                                ZStack {
+                                    //                                    Color.black.opacity(0.6)
+                                    //                                        .edgesIgnoringSafeArea(.all)
+                                    VStack(spacing: 20) {
+                                        Button(action: {
+                                            showAlert = true
+                                        }) {
+                                            Text("MENGAMBIL OBAT MAAG")
+                                        }
+                                        .modifier(EqualSizeButtonStyle())
+                                        .frame(width: 343, height: 56)
+                                        .shadow(radius: 0, x: 4, y: 4)
+                                        NavigationLink(destination: Screen18(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true), label: {
+                                            Text("MENGAMBIL MENSTRUAL HEAT PATCH")
+                                                .modifier(EqualSizeButtonStyle())
+                                                .frame(width: 343, height: 56)
+                                                .shadow(radius: 0, x: 4, y: 4)
+                                        })
+                                        .navigationBarBackButtonHidden(true)
+                                        
+                                        //                                        Button(action: {
+                                        //                                            isPopUpVisible = false
+                                        //                                            isNextScreenActive = true
+                                        //                                        }) {
+                                        //
+                                        //                                        }
+                                        //                                        .modifier(EqualSizeButtonStyle())
+                                    }
+                                    
+                                    
+                                }
+                                .transition(.opacity)
+                            }
+                        }
+                    )
+            )
+            .navigationBarHidden(true)
+            .alert(isPresented: $showAlert) { () -> Alert in
+                performVibration()
+                return Alert(title: Text("Yakin?"), message: Text("Dini lagi kram menstruasi loh, bukan lagi sakit maag..."), dismissButton: .default(Text("Kembali")))
             }
-            Spacer()
-            Spacer()
-            Spacer()
-            Spacer()
-            Spacer()
-            Spacer()
-            Spacer()
         }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("scene17B")
-            .resizable()
-            .frame(width: 390, height: 856.5))
-        .onTapGesture {
-            isScreen17BActive = true
-        }
-        .background(
-            NavigationLink(
-                destination: Screen18(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true),
-                isActive: $isScreen17BActive
-            ) {
-                EmptyView()
-            }
-                .hidden()
-        )
         .navigationBarHidden(true)
     }
 }
+
 
 
 struct Screen18: View {
@@ -134,7 +215,57 @@ struct Screen19: View {
                     .frame(width: 43, height: 43)
             }
             Spacer()
-            Spacer()
+            ScrollView(.horizontal){
+                HStack(spacing:25){
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 40)
+                            .frame(width: 343, height: 557)
+                            .foregroundColor(.white)
+                        VStack{
+                            Image("edu1")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 343, height: 557)
+                            
+                        }
+                        //                        .padding(.leading,20)
+                        //                        .padding(.trailing,20)
+                        //                        .padding(.bottom, 100)
+                        .frame(width: 343, height: 557)
+                    }
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 40)
+                            .frame(width: 343, height: 557)
+                            .foregroundColor(.white)
+                        VStack{
+                            Image("edu2")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 343, height: 557)
+                        }
+                        //                        .padding(.leading,20)
+                        //                        .padding(.trailing,20)
+                        //                        .padding(.bottom, 100)
+                        .frame(width: 343, height: 557)
+                    }
+                    //                .padding(.top,40)
+                    //                    .padding(.bottom, 70)
+                    //                    .padding(.leading,25)
+                    //                    .padding(.trailing,25)
+                    
+                }
+                
+                Text("Tap untuk Kembali!")
+                    .multilineTextAlignment(.leading)
+                    .padding(.bottom, 15)
+                    .foregroundColor(.black)
+                    .buttonStyle(PlainButtonStyle())
+                    .padding()
+                    .frame(alignment: .top)
+                
+                
+                
+            }
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -156,6 +287,40 @@ struct Screen19: View {
         .navigationBarHidden(true)
     }
 }
+//
+//struct Screen19: View {
+//    @State private var size = UIScreen.main.bounds.size
+//    var body: some View {
+//        NavigationLink{
+//            screenqoni(buttonMuncul: true, tapCount : 1)
+//        }label: {
+//            ZStack{
+//                Image("bgedu")
+//                    .resizable()
+//                    .ignoresSafeArea()
+//                VStack{
+//                    HStack{
+//                        NavigationLink{
+//                            screenqoni(buttonMuncul: true, tapCount : 1)
+//                        }label: {
+//                            Image(systemName: "chevron.left")
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(height: 34)
+//                                .padding(.horizontal, 20)
+//        //                                .frame(maxWidth: .infinity, alignment: .leading)
+//                                .foregroundColor(.black)
+//                        }
+//                        Image("imageSound")
+//                            .resizable()
+//                            .frame(width: 43, height: 43)
+//                            .padding(.horizontal, 15)
+//                            .frame(maxWidth: .infinity, alignment: .trailing)
+//                    }
+//                    Spacer()
+//
+
+
 
 struct Screen20: View {
     @Binding var isNextScreenActive: Bool
@@ -173,7 +338,7 @@ struct Screen20: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("scene20")
+        .background(Image("scene20fix")
             .resizable()
             .frame(width: 390, height: 856.5))
         .onTapGesture {
@@ -207,7 +372,7 @@ struct Screen201: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("scene201")
+        .background(Image("edu20")
             .resizable()
             .frame(width: 390, height: 856.5))
         .onTapGesture {
@@ -224,6 +389,7 @@ struct Screen201: View {
         )
         .navigationBarHidden(true)
     }
+                    
 }
 
 struct Screen21: View {
@@ -242,9 +408,14 @@ struct Screen21: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("scene21")
+        .background(Image("edu21")
             .resizable()
             .frame(width: 390, height: 856.5))
+        .navigationBarHidden(true)
+        .onAppear {
+            performVibration()
+        }
+        
         //        .onTapGesture {
         //            isScreen10Active = true
         //        }
@@ -260,9 +431,45 @@ struct Screen21: View {
         //        .navigationBarHidden(true)
     }
 }
+struct PerformVibrationOnAppear: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .onAppear {
+                performVibration()
+            }
+    }
+
+    private func performVibration() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+}
+
+func performVibration() {
+    let generator = UINotificationFeedbackGenerator()
+    generator.notificationOccurred(.error)
+}
+
+extension View {
+    func performVibrationOnAppear() -> some View {
+        modifier(PerformVibrationOnAppear())
+    }
+}
+struct EqualSizeButtonStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: 314, height: 57)
+        //            .padding()
+            .background(Color(red: 253/255, green: 174/255, blue: 203/255))
+            .foregroundColor(.black)
+            .cornerRadius(10)
+    }
+}
 
 struct NextScreen_Previews: PreviewProvider {
     static var previews: some View {
         NextScreen()
     }
 }
+
+    
