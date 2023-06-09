@@ -26,43 +26,46 @@ struct ContentView: View {
     @State private var isAudioEnabled = true
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
-                    Image(systemName: "chevron.left")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 34)
-                        .padding(.horizontal, 10)
-                        .foregroundColor(.black)
-                    Spacer()
-                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    //<<<<<<< HEAD
-                    //=======
-                    //                        .foregroundColor(.black)
-                    //>>>>>>> 4d0bc7404ee8f28f2e4b00ff5199e8a668849e27
-                    //                    //                    if isAudioEnabled {
-                    //                    //                                            Button(action: {
-                    //                    //                                                isAudioEnabled.toggle()
-                    //                    //                                            }) {
-                    //                    //                                                Image("imageSound")
-                    //                    //                                                    .resizable()
-                    //                    //                                                    .frame(width: 43, height: 43)
-                    //<<<<<<< HEAD
-                    //=======
-                    //
-                    //>>>>>>> 4d0bc7404ee8f28f2e4b00ff5199e8a668849e27
-                    //                }
-                    Spacer()
+            ZStack{
+                Image("scene3")
+                    .resizable()
+                    .frame(width: 390, height: 856.5)
+                VStack {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 34)
+                            .padding(.horizontal, 10)
+                            .foregroundColor(.black)
+                        Spacer()
+                        AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                            .foregroundColor(.black)
+                        //<<<<<<< HEAD
+                        //=======
+                        //                        .foregroundColor(.black)
+                        //>>>>>>> 4d0bc7404ee8f28f2e4b00ff5199e8a668849e27
+                        //                    //                    if isAudioEnabled {
+                        //                    //                                            Button(action: {
+                        //                    //                                                isAudioEnabled.toggle()
+                        //                    //                                            }) {
+                        //                    //                                                Image("imageSound")
+                        //                    //                                                    .resizable()
+                        //                    //                                                    .frame(width: 43, height: 43)
+                        //<<<<<<< HEAD
+                        //=======
+                        //
+                        //>>>>>>> 4d0bc7404ee8f28f2e4b00ff5199e8a668849e27
+                        //                }
+                    }
+                    .padding(.top, 40)
                     Spacer()
                     Text("Tap untuk lanjut!")
-                }
+                        .padding(.bottom, 40)
+            }
                 .padding()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(
-                    Image("scene3")
-                        .resizable()
-                        .frame(width: 390, height: 856.5)
-                )
+
                 .onTapGesture {
                     isNextScreenActive = true
                 }
