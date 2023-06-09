@@ -364,8 +364,6 @@ struct Screen7: View {
                                         NavigationLink(destination: ScreenBilla(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true), label: {
                                             Text("MENCOBA MENENANGKAN & MENGAJAK DINI KE TOILET")
                                                 .modifier(EqualSizeButtonStyle())
-
-
                                         })
                                         .navigationBarBackButtonHidden(true)
 
@@ -395,6 +393,7 @@ struct Screen7: View {
             }
 
         }
+        .navigationBarBackButtonHidden(true)
             }
 }
 

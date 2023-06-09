@@ -17,6 +17,21 @@ struct sectionBillaScreen: View {
                     .ignoresSafeArea()
                 
                 VStack{
+                    HStack{
+                        Image(systemName: "chevron.left")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 34)
+                            .padding(.horizontal, 25)
+                            .foregroundColor(.black)
+                        Spacer()
+                        Image("imageSound")
+                            .resizable()
+                            .frame(width: 43, height: 43)
+                            .padding(.horizontal, 15)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                    }
+                    .padding(.top, 70)
                     Spacer()
                     
                     NavigationLink{
@@ -59,7 +74,7 @@ struct sectionBillaScreen: View {
                             .padding(.horizontal, 40)
                         
                     }
-                    .padding(.bottom,90)
+                    .padding(.bottom,100)
                 }
             }
         }

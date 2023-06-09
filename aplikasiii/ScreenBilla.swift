@@ -20,7 +20,8 @@ struct ScreenBilla: View {
             NavigationLink(destination: sectionBillaScreen(), isActive: Binding<Bool>(
                 get: { tapCount > 2 },
                 set: { _ in }
-            ))  {
+            ))
+            {
                 ZStack{
                     Image("toiletBackground")
                         .resizable()
@@ -104,6 +105,7 @@ struct ScreenBilla: View {
                             .padding(.bottom,90)
                         }
                     }
+                    .navigationBarBackButtonHidden(true)
                     
                     
                 }
