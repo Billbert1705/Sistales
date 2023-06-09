@@ -22,11 +22,24 @@ struct screenqoni: View {
                     .ignoresSafeArea()
                 
                 VStack{
-                    Image("imageSound")
-                        .resizable()
-                        .frame(width: 43, height: 43)
-                        .padding(.horizontal, 15)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    HStack{
+                        NavigationLink{
+                            SiapPakaiScreen()
+                        }label:{
+                            Image(systemName: "chevron.left")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 34)
+                                .padding(.horizontal, 25)
+                                .foregroundColor(.black)
+                        }
+                        Spacer()
+                        Image("imageSound")
+                            .resizable()
+                            .frame(width: 43, height: 43)
+                            .padding(.horizontal, 15)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                    }
                     
                     Image("diniEs")
                         .resizable()
