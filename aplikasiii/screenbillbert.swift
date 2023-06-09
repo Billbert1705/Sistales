@@ -231,16 +231,16 @@
 //    }
 //}
 //
-//struct EqualSizeButtonStyle: ViewModifier {
-//    func body(content: Content) -> some View {
-//        content
-//            .frame(width: 314, height: 57)
-////            .padding()
-//            .background(Color(red: 253/255, green: 174/255, blue: 203/255))
-//            .foregroundColor(.black)
-//            .cornerRadius(10)
-//    }
-//}
+////struct EqualSizeButtonStyle: ViewModifier {
+////    func body(content: Content) -> some View {
+////        content
+////            .frame(width: 314, height: 57)
+//////            .padding()
+////            .background(Color(red: 253/255, green: 174/255, blue: 203/255))
+////            .foregroundColor(.black)
+////            .cornerRadius(10)
+////    }
+////}
 //
 //struct Screen7: View {
 //    @Binding var isNextScreenActive: Bool
