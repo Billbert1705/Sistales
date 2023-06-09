@@ -404,9 +404,13 @@ struct ContentView: View {
                                                 Text("MEMBIARKAN DINI BEGITU SAJA")
                                             }
                                             .modifier(EqualSizeButtonStyle())
+                                            .frame(width: 343, height: 56)
+                                            .shadow(radius: 0, x: 4, y: 4)
                                             NavigationLink(destination: ScreenBilla(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true), label: {
                                                 Text("MENCOBA MENENANGKAN & MENGAJAK DINI KE TOILET")
                                                     .modifier(EqualSizeButtonStyle())
+                                                    .frame(width: 343, height: 56)
+                                                    .shadow(radius: 0, x: 4, y: 4)
                                                 //<<<<<<< HEAD
                                                 //
                                                 //

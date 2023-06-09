@@ -130,9 +130,13 @@ struct Screen17B: View {
                                             Text("MENGAMBIL OBAT MAAG")
                                         }
                                         .modifier(EqualSizeButtonStyle())
+                                        .frame(width: 343, height: 56)
+                                        .shadow(radius: 0, x: 4, y: 4)
                                         NavigationLink(destination: Screen18(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true), label: {
-                                            Text("MENGAMBIL MENTRUAL HEAT PATCH")
+                                            Text("MENGAMBIL MENSTRUAL HEAT PATCH")
                                                 .modifier(EqualSizeButtonStyle())
+                                                .frame(width: 343, height: 56)
+                                                .shadow(radius: 0, x: 4, y: 4)
                                         })
                                         .navigationBarBackButtonHidden(true)
                                         
