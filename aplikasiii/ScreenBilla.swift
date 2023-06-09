@@ -13,6 +13,7 @@ struct ScreenBilla: View {
     @State var buttonMuncul = false
     @State var tapCount = 0
     @State private var slideOffset: CGFloat = 0
+    @Binding var isNextScreenActive: Bool
     
     var body: some View {
         NavigationStack{
@@ -108,9 +109,9 @@ struct ScreenBilla: View {
         
     }
     
-    struct ScreenBilla_Previews: PreviewProvider {
-        static var previews: some View {
-            ScreenBilla()
-        }
-    }
+//    struct ScreenBilla_Previews: PreviewProvider {
+//        static var previews: some View {
+//            ScreenBilla()
+//        }
+//    }
 }

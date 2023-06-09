@@ -311,7 +311,7 @@ struct Screen7: View {
                                             Text("MEMBIARKAN DINI BEGITU SAJA")
                                         }
                                         .modifier(EqualSizeButtonStyle())
-                                        NavigationLink(destination: Screen8(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true), label: {
+                                        NavigationLink(destination: ScreenBilla(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true), label: {
                                             Text("MENCOBA MENENANGKAN & MENGAJAK DINI KE TOILET")
                                                 .modifier(EqualSizeButtonStyle())
 
