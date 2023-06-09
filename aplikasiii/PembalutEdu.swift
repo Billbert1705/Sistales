@@ -47,6 +47,7 @@ struct PembalutEdu: View {
                             RoundedRectangle(cornerRadius: 40)
                                 .frame(width: 343, height: 557)
                                 .foregroundColor(.white)
+                                .padding(.bottom, 90)
                                 .overlay(
                                     ZStack {
                                         if onTap == 0 {
@@ -55,8 +56,11 @@ struct PembalutEdu: View {
                                                 Text("Pembalut harus diganti\nsetiap 4-6 jam sekali loh!\n\nTersedia dalam berbagai ukuran, daya serap, dan bahan serta terdiri dari desain berlapis yang terbuat dari campuran plastik, rayon, dan kapas.\n\nBentuknya juga macam-macam, ada yang tanpa sayap dan bersayap biar ga bocor dan ngejaga pembalut tetap nempel\ndi celana dalam!")
                                                     .foregroundColor(.black)
                                                     .padding(30)
+                                                    .padding(.bottom, 60)
                                                     .multilineTextAlignment(.leading)
-                                            }.padding(.top, 20)
+                                            }
+//                                            .padding(.top, 20)
+                                            
                                         }
                                         if onTap == 1 {
                                             VStack {
@@ -72,11 +76,13 @@ struct PembalutEdu: View {
                                                 
                                                 Text("MENSTRUAL CUP").font(.system(size: 20, weight: .bold)).foregroundColor(.black)
                                             }.padding(.top, 10)
+                                            .padding(.bottom, 120)
                                         }
                                         if onTap == 2{
                                             ZStack{
                                                 Image("tableMens").resizable()
-                                                    .scaleEffect(0.9)
+                                                    .scaleEffect(0.95)
+                                                    .padding(.bottom, 90)
                                             }
                                         }
                                     }
