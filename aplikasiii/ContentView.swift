@@ -20,22 +20,48 @@ struct AudioToggleButton: View {
         }
     }
 }
+
+struct SplashScreen: View {
+    @State private var isActive = false
+    
+    var body: some View {
+        Image("imageSplash")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .edgesIgnoringSafeArea(.all)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    isActive = true
+                }
+            }
+            .fullScreenCover(isPresented: $isActive) {
+                StartPage()
+                    .transition(.opacity)
+            }
+    }
+}
+
 struct ContentView: View {
     @State private var isNextScreenActive = false
     @State private var isAudioEnabled = true
+    
     var body: some View {
+        HStack {
+            Spacer()
+            AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                Image("imageSound")
+//                    .resizable()
+//                    .frame(width: 43, height: 43)
+        }
         NavigationView {
+            
             VStack {
                 HStack {
                     Spacer()
                     AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-//                    if isAudioEnabled {
-//                                            Button(action: {
-//                                                isAudioEnabled.toggle()
-//                                            }) {
-//                                                Image("imageSound")
-//                                                    .resizable()
-//                                                    .frame(width: 43, height: 43)
+    //                Image("imageSound")
+    //                    .resizable()
+    //                    .frame(width: 43, height: 43)
                 }
                 Spacer()
                 Spacer()
@@ -58,11 +84,41 @@ struct ContentView: View {
                 ) {
                     EmptyView()
                 }
-                    .hidden()
+                .hidden()
             )
             .navigationBarHidden(true)
         }
     }
+}
+
+struct StartPage: View {
+    @State private var isNextScreenActive = false
+    
+    var body: some View {
+        VStack {
+            Button(action: {
+                isNextScreenActive = true
+            }) {
+                Text("START GAME")
+                    .padding()
+                    .background(Image("pink"))
+                    .foregroundColor(.black)
+                    .bold()
+                    .cornerRadius(60)
+            }
+            .padding()
+            .fullScreenCover(isPresented: $isNextScreenActive) {
+                ContentView()
+                    .transition(.opacity)
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Image("imageStart")
+            .resizable()
+            .frame(width: 390, height: 856.5))
+    }
+        
 }
 
 struct Screen2: View {
@@ -371,11 +427,13 @@ struct Screen8: View {
             .resizable()
             .frame(width: 390, height: 856.5))    }
 }
-struct ContentView_Previews: PreviewProvider {
+struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SplashScreen()
     }
 }
+
+
 
 
 
