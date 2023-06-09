@@ -28,22 +28,39 @@ struct ScreenBilla: View {
                         .ignoresSafeArea()
                     
                     VStack{
-    //                    Image("imageSound")
-    //                        .resizable()
-    //                        .frame(width: 43, height: 43)
-    //                        .padding(.horizontal, 15)
-    //                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        
+                        HStack{
+                            Image(systemName: "chevron.left")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 34)
+                                .padding(.horizontal, 25)
+                                .foregroundColor(.black)
+                            Spacer()
+                            Image("imageSound")
+                                .resizable()
+                                .frame(width: 43, height: 43)
+                                .padding(.horizontal, 15)
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                        }
+                        .padding(.top, 90)
                         
                         Image("diniSad")
+//                            .resizable()
+//                            .scaledToFit()
+//                            .frame(width: 400, height: 1000)
+//                            .position(x: size.width/3, y: size.height/2 + 150)
+//                            .opacity(tapCount > 0 && tapCount <= 2 ? 1 : 0)
+//                            .offset(x: tapCount > 0 ? 0 : 50, y: 0)
+//                            .animation(.easeInOut) // Apply animation to the offset
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 400, height: 650)
-                            .position(x: size.width/3, y: size.height/2 + 150)
+                            .frame(width: 400, height: 600)
+                            .position(x: size.width/3, y: size.height/2)
                             .opacity(tapCount > 0 && tapCount <= 2 ? 1 : 0)
                             .offset(x: tapCount > 0 ? 0 : 50, y: 0)
-                            .animation(.easeInOut) // Apply animation to the offset
-                        
-                        Spacer()
+                            .animation(.easeInOut)
+//                        Spacer()
                         
                         if tapCount == 0 {
                             ZStack{
@@ -52,7 +69,7 @@ struct ScreenBilla: View {
                                     .foregroundColor(.white)
                                 Text("Sesampai di toilet . . .").foregroundColor(.black)
                             }
-                            .padding(.bottom, 70)
+                            .padding(.bottom, 100)
                         }
                         if tapCount == 1{
                             ZStack{
@@ -68,7 +85,7 @@ struct ScreenBilla: View {
                                     .padding(.horizontal, 40)
                                 
                             }
-                            .padding(.bottom,90)
+                            .padding(.bottom,100)
                         }
                         if tapCount == 2{
                             ZStack{
