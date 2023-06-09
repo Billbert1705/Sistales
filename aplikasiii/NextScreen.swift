@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct NextScreen: View {
     @State private var isNextScreenActive = false
@@ -333,7 +334,7 @@ struct Screen20: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("scene20")
+        .background(Image("scene20fix")
             .resizable()
             .frame(width: 390, height: 856.5))
         .onTapGesture {
@@ -367,7 +368,7 @@ struct Screen201: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("scene201")
+        .background(Image("edu20")
             .resizable()
             .frame(width: 390, height: 856.5))
         .onTapGesture {
@@ -384,6 +385,7 @@ struct Screen201: View {
         )
         .navigationBarHidden(true)
     }
+                    
 }
 
 struct Screen21: View {
@@ -402,10 +404,14 @@ struct Screen21: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("scene21")
+        .background(Image("edu21")
             .resizable()
             .frame(width: 390, height: 856.5))
         .navigationBarHidden(true)
+        .onAppear {
+            performVibration()
+        }
+        
         //        .onTapGesture {
         //            isScreen10Active = true
         //        }
@@ -421,9 +427,30 @@ struct Screen21: View {
         //        .navigationBarHidden(true)
     }
 }
+struct PerformVibrationOnAppear: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .onAppear {
+                performVibration()
+            }
+    }
+
+    private func performVibration() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+}
+
+extension View {
+    func performVibrationOnAppear() -> some View {
+        modifier(PerformVibrationOnAppear())
+    }
+}
 
 struct NextScreen_Previews: PreviewProvider {
     static var previews: some View {
         NextScreen()
     }
 }
+
+    

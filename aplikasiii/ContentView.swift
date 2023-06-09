@@ -373,7 +373,7 @@ struct Screen8: View {
 
 func performVibration() {
     let generator = UINotificationFeedbackGenerator()
-    generator.notificationOccurred(.success)
+    generator.notificationOccurred(.error)
 }
 
 struct ContentView_Previews: PreviewProvider {
