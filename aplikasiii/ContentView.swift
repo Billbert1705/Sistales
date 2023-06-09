@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct AudioToggleButton: View {
     @Binding var isAudioEnabled: Bool
-
+    
     var body: some View {
         Button(action: {
             isAudioEnabled.toggle()
@@ -29,13 +30,13 @@ struct ContentView: View {
                 HStack {
                     Spacer()
                     AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-//                    if isAudioEnabled {
-//                                            Button(action: {
-//                                                isAudioEnabled.toggle()
-//                                            }) {
-//                                                Image("imageSound")
-//                                                    .resizable()
-//                                                    .frame(width: 43, height: 43)
+                    //                    if isAudioEnabled {
+                    //                                            Button(action: {
+                    //                                                isAudioEnabled.toggle()
+                    //                                            }) {
+                    //                                                Image("imageSound")
+                    //                                                    .resizable()
+                    //                                                    .frame(width: 43, height: 43)
                 }
                 Spacer()
                 Spacer()
@@ -69,15 +70,15 @@ struct Screen2: View {
     @Binding var isNextScreenActive: Bool
     @State private var isScreen3Active = false
     @State private var isAudioEnabled = true
-
+    
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-//                Image("imageSound")
-//                    .resizable()
-//                    .frame(width: 43, height: 43)
+                //                Image("imageSound")
+                //                    .resizable()
+                //                    .frame(width: 43, height: 43)
             }
             Spacer()
             Spacer()
@@ -118,9 +119,9 @@ struct Screen3: View {
             HStack {
                 Spacer()
                 AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-//                Image("imageSound")
-//                    .resizable()
-//                    .frame(width: 43, height: 43)
+                //                Image("imageSound")
+                //                    .resizable()
+                //                    .frame(width: 43, height: 43)
             }
             Spacer()
             Spacer()
@@ -155,9 +156,9 @@ struct Screen4: View {
             HStack {
                 Spacer()
                 AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-//                Image("imageSound")
-//                    .resizable()
-//                    .frame(width: 43, height: 43)
+                //                Image("imageSound")
+                //                    .resizable()
+                //                    .frame(width: 43, height: 43)
             }
             Spacer()
             Spacer()
@@ -192,9 +193,9 @@ struct Screen5: View {
             HStack {
                 Spacer()
                 AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-//                Image("imageSound")
-//                    .resizable()
-//                    .frame(width: 43, height: 43)
+                //                Image("imageSound")
+                //                    .resizable()
+                //                    .frame(width: 43, height: 43)
             }
             Spacer()
             Spacer()
@@ -228,9 +229,9 @@ struct Screen6: View {
             HStack {
                 Spacer()
                 AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-//                Image("imageSound")
-//                    .resizable()
-//                    .frame(width: 43, height: 43)
+                //                Image("imageSound")
+                //                    .resizable()
+                //                    .frame(width: 43, height: 43)
             }
             Spacer()
             Spacer()
@@ -249,13 +250,13 @@ struct Screen6: View {
                 isActive: $isScreen7Active
             ) {
                 EmptyView()
-
+                
             }
                 .hidden()
-
+            
         )
         .navigationBarHidden(true)
-
+        
     }
 }
 
@@ -263,7 +264,7 @@ struct EqualSizeButtonStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(width: 314, height: 57)
-//            .padding()
+        //            .padding()
             .background(Color(red: 253/255, green: 174/255, blue: 203/255))
             .foregroundColor(.black)
             .cornerRadius(10)
@@ -275,16 +276,16 @@ struct Screen7: View {
     @Binding var isNextScreenActive: Bool
     @State private var isPopUpVisible = false
     @State private var showAlert = false
-
+    
     var body: some View {
         NavigationView{
             VStack {
                 HStack {
                     Spacer()
                     AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-//                    Image("imageSound")
-//                        .resizable()
-//                        .frame(width: 43, height: 43)
+                    //                    Image("imageSound")
+                    //                        .resizable()
+                    //                        .frame(width: 43, height: 43)
                 }
                 Spacer()
                 Spacer()
@@ -302,8 +303,8 @@ struct Screen7: View {
                         VStack {
                             if isPopUpVisible {
                                 ZStack {
-//                                    Color.black.opacity(0.6)
-//                                        .edgesIgnoringSafeArea(.all)
+                                    //                                    Color.black.opacity(0.6)
+                                    //                                        .edgesIgnoringSafeArea(.all)
                                     VStack(spacing: 20) {
                                         Button(action: {
                                             showAlert = true
@@ -314,21 +315,21 @@ struct Screen7: View {
                                         NavigationLink(destination: Screen8(isNextScreenActive: $isNextScreenActive).navigationBarBackButtonHidden(true), label: {
                                             Text("MENCOBA MENENANGKAN & MENGAJAK DINI KE TOILET")
                                                 .modifier(EqualSizeButtonStyle())
-
-
+                                            
+                                            
                                         })
                                         .navigationBarBackButtonHidden(true)
-
-//                                        Button(action: {
-//                                            isPopUpVisible = false
-//                                            isNextScreenActive = true
-//                                        }) {
-//
-//                                        }
-//                                        .modifier(EqualSizeButtonStyle())
+                                        
+                                        //                                        Button(action: {
+                                        //                                            isPopUpVisible = false
+                                        //                                            isNextScreenActive = true
+                                        //                                        }) {
+                                        //
+                                        //                                        }
+                                        //                                        .modifier(EqualSizeButtonStyle())
                                     }
-
-
+                                    
+                                    
                                 }
                                 .transition(.opacity)
                             }
@@ -336,17 +337,15 @@ struct Screen7: View {
                     )
             )
             .navigationBarHidden(true)
-            .alert(isPresented: $showAlert) {
-                Alert(
-                    title: Text("Yakin?"),
-                    message: Text("Masa Dini dibiarin gitu aja..."),
-                    dismissButton: .default(Text("Kembali"))
-                )
+            .alert(isPresented: $showAlert) { () -> Alert in
+                performVibration()
+                return Alert(title: Text("Yakin?"), message: Text("Masa Dini dibiarin gitu aja..."), dismissButton: .default(Text("Kembali")))
             }
-
         }
-            }
+        
+    }
 }
+
 
 
 struct Screen8: View {
@@ -358,9 +357,9 @@ struct Screen8: View {
             HStack {
                 Spacer()
                 AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-//                Image("imageSound")
-//                    .resizable()
-//                    .frame(width: 43, height: 43)
+                //                Image("imageSound")
+                //                    .resizable()
+                //                    .frame(width: 43, height: 43)
             }
             Spacer()
             Spacer()
@@ -371,6 +370,12 @@ struct Screen8: View {
             .resizable()
             .frame(width: 390, height: 856.5))    }
 }
+
+func performVibration() {
+    let generator = UINotificationFeedbackGenerator()
+    generator.notificationOccurred(.success)
+}
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
