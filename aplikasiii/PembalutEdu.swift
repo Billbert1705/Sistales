@@ -10,6 +10,7 @@ import SwiftUI
 struct PembalutEdu: View {
     
     @State private var onTap = 0
+    @State var isAudioEnabled = false
     
     var body: some View {
         NavigationStack {
@@ -34,13 +35,15 @@ struct PembalutEdu: View {
                                         .padding(.horizontal, 20)
                                         .foregroundColor(.black)
                                 }
-                                
-                                
-                                Image("imageSound")
-                                    .resizable()
-                                    .frame(width: 43, height: 43)
-                                    .padding(.horizontal, 15)
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
+                                Spacer()
+                                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                                    .foregroundColor(.black)
+                                    .padding(.trailing, 25)
+//                                Image("imageSound")
+//                                    .resizable()
+//                                    .frame(width: 43, height: 43)
+//                                    .padding(.horizontal, 15)
+//                                    .frame(maxWidth: .infinity, alignment: .trailing)
                                 
                             }
                             Spacer()
@@ -87,6 +90,9 @@ struct PembalutEdu: View {
                                         }
                                     }
                                 )
+                            Text("Tap untuk Kembali!")
+                                .foregroundColor(.black)
+                                .padding(.bottom)
                         }
                     }
                 }
