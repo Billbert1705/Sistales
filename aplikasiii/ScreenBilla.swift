@@ -45,6 +45,7 @@ struct ScreenBilla: View {
                                 .frame(maxWidth: .infinity, alignment: .trailing)
                         }
                         .padding(.top, 90)
+                        .navigationBarBackButtonHidden(true)
                         
                         Image("diniSad")
 //                            .resizable()
@@ -71,6 +72,7 @@ struct ScreenBilla: View {
                                 Text("Sesampai di toilet . . .").foregroundColor(.black)
                             }
                             .padding(.bottom, 100)
+                            .navigationBarBackButtonHidden(true)
                         }
                         if tapCount == 1{
                             ZStack{
@@ -87,6 +89,7 @@ struct ScreenBilla: View {
                                 
                             }
                             .padding(.bottom,100)
+                            .navigationBarBackButtonHidden(true)
                         }
                         if tapCount == 2{
                             ZStack{

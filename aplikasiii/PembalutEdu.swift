@@ -95,7 +95,7 @@ struct PembalutEdu: View {
                     if onTap <= 2 {
                         onTap += 1
                     }
-                }
+                }.navigationBarBackButtonHidden(true)
             }
         }
     }

@@ -62,6 +62,7 @@ struct sectionBillaScreen: View {
                         }
                     }
                     .foregroundColor(Color("pink"))
+                    .navigationBarBackButtonHidden(true)
                     Spacer()
                     
                     ZStack{
@@ -75,6 +76,7 @@ struct sectionBillaScreen: View {
                         
                     }
                     .padding(.bottom,100)
+                    .navigationBarBackButtonHidden(true)
                 }
             }
         }

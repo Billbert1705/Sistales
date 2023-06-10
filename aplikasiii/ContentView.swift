@@ -60,6 +60,7 @@ struct StartPage: View {
                     .foregroundColor(.black)
                     .bold()
                     .cornerRadius(60)
+                
             }
             .padding()
             .fullScreenCover(isPresented: $isNextScreenActive) {
@@ -72,6 +73,7 @@ struct StartPage: View {
         .background(Image("imageStart")
             .resizable()
             .frame(width: 390, height: 856.5))
+        
     }
         
 }
