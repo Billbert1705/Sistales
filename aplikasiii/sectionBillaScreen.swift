@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct sectionBillaScreen: View {
+    @State var isAudioEnabled = false
+    
     var body: some View {
         NavigationStack{
             ZStack{
@@ -25,13 +27,11 @@ struct sectionBillaScreen: View {
                             .padding(.horizontal, 25)
                             .foregroundColor(.black)
                         Spacer()
-                        Image("imageSound")
-                            .resizable()
-                            .frame(width: 43, height: 43)
-                            .padding(.horizontal, 15)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
+                        AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                            .foregroundColor(.black)
+                            .padding(.trailing, 25)
                     }
-                    .padding(.top, 70)
+                    .padding(.top, 90)
                     Spacer()
                     
                     NavigationLink{
@@ -50,7 +50,7 @@ struct sectionBillaScreen: View {
                     .foregroundColor(Color("pink"))
                     
                     NavigationLink{
-                        PembalutEdu()
+                        PembalutScreen()
                     }label:{
                         ZStack{
                             RoundedRectangle(cornerRadius: 15)

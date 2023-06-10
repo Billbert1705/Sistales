@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TissueScreen: View {
+    @State var isAudioEnabled = false
+    
     var body: some View {
         NavigationStack{
             NavigationLink{
@@ -29,13 +31,16 @@ struct TissueScreen: View {
                                 .padding(.horizontal, 20)
                                 .foregroundColor(.black)
                         }
+                        Spacer()
+                        AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                            .foregroundColor(.black)
+                            .padding(.trailing, 25)
                         
-                        
-                        Image("imageSound")
-                            .resizable()
-                            .frame(width: 43, height: 43)
-                            .padding(.horizontal, 15)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
+//                        Image("imageSound")
+//                            .resizable()
+//                            .frame(width: 43, height: 43)
+//                            .padding(.horizontal, 15)
+//                            .frame(maxWidth: .infinity, alignment: .trailing)
                         
                     }
                     Spacer()

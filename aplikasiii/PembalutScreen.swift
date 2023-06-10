@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PembalutScreen: View {
     @State private var size = UIScreen.main.bounds.size
+    @State var isAudioEnabled = false
     
     var body: some View {
         NavigationStack{
@@ -22,9 +23,33 @@ struct PembalutScreen: View {
                         .ignoresSafeArea()
                     
                     VStack{
+                        HStack{
+                            NavigationLink{
+                                sectionBillaScreen()
+//                                sectionBillaScreen(buttonMuncul: true, tapCount : 1)
+                            }label: {
+                                Image(systemName: "chevron.left")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 34)
+                                    .padding(.horizontal, 20)
+                                    .foregroundColor(.black)
+                            }
+                            Spacer()
+//                            Image("imageSound")
+//                                .resizable()
+//                                .frame(width: 43, height: 43)
+//                                .padding(.horizontal, 15)
+//                                .frame(maxWidth: .infinity, alignment: .trailing)
+                            AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                                .foregroundColor(.black)
+                                .padding(.trailing, 25)
+                        }
+                        .padding(.top, 90)
+//                        Spacer()
                         Image("dompetDua")
-                            .scaleEffect(0.5)
-                            .position(x: size.width/2, y: size.height/2 + 110)
+                            .scaleEffect(0.6)
+                            .position(x: size.width/1.75, y: size.height/2.2)
                         
                         ZStack{
                             RoundedRectangle(cornerRadius: 10)
@@ -38,6 +63,7 @@ struct PembalutScreen: View {
                             
                         }
                         .padding(.bottom,150)
+                        .navigationBarBackButtonHidden(true)
                     }
                 }
             }

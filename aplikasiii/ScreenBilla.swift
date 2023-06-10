@@ -14,6 +14,7 @@ struct ScreenBilla: View {
     @State var tapCount = 0
     @State private var slideOffset: CGFloat = 0
     @Binding var isNextScreenActive: Bool
+    @State var isAudioEnabled = false
     
     var body: some View {
         NavigationStack{
@@ -29,7 +30,6 @@ struct ScreenBilla: View {
                         .ignoresSafeArea()
                     
                     VStack{
-                        
                         HStack{
                             Image(systemName: "chevron.left")
                                 .resizable()
@@ -38,23 +38,30 @@ struct ScreenBilla: View {
                                 .padding(.horizontal, 25)
                                 .foregroundColor(.black)
                             Spacer()
-                            Image("imageSound")
-                                .resizable()
-                                .frame(width: 43, height: 43)
-                                .padding(.horizontal, 15)
-                                .frame(maxWidth: .infinity, alignment: .trailing)
+                            AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                                .foregroundColor(.black)
+                                .padding(.trailing, 25)
+                            //                            Image("imageSound")
+                            //                                .resizable()
+                            //                                .frame(width: 43, height: 43)
+                            //                                .padding(.horizontal, 15)
+                            //                                .frame(maxWidth: .infinity, alignment: .trailing)
+                            //                        }
+                            
+                                
+                                .navigationBarBackButtonHidden(true)
                         }
                         .padding(.top, 90)
                         .navigationBarBackButtonHidden(true)
                         
                         Image("diniSad")
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width: 400, height: 1000)
-//                            .position(x: size.width/3, y: size.height/2 + 150)
-//                            .opacity(tapCount > 0 && tapCount <= 2 ? 1 : 0)
-//                            .offset(x: tapCount > 0 ? 0 : 50, y: 0)
-//                            .animation(.easeInOut) // Apply animation to the offset
+                        //                            .resizable()
+                        //                            .scaledToFit()
+                        //                            .frame(width: 400, height: 1000)
+                        //                            .position(x: size.width/3, y: size.height/2 + 150)
+                        //                            .opacity(tapCount > 0 && tapCount <= 2 ? 1 : 0)
+                        //                            .offset(x: tapCount > 0 ? 0 : 50, y: 0)
+                        //                            .animation(.easeInOut) // Apply animation to the offset
                             .resizable()
                             .scaledToFit()
                             .frame(width: 400, height: 600)
@@ -62,7 +69,7 @@ struct ScreenBilla: View {
                             .opacity(tapCount > 0 && tapCount <= 2 ? 1 : 0)
                             .offset(x: tapCount > 0 ? 0 : 50, y: 0)
                             .animation(.easeInOut)
-//                        Spacer()
+                        //                        Spacer()
                         
                         if tapCount == 0 {
                             ZStack{
@@ -107,33 +114,31 @@ struct ScreenBilla: View {
                             }
                             .padding(.bottom,90)
                         }
+                        
                     }
-                    .navigationBarBackButtonHidden(true)
-                    
-                    
-                }
-                .onTapGesture{
-                    if(tapCount == 2){
-                        buttonMuncul = true
-                    }
-                    withAnimation {
-                        if tapCount <= 2 {
-                            tapCount += 1
+                    .onTapGesture{
+                        if(tapCount == 2){
+                            buttonMuncul = true
                         }
-                        diniMuncul = true
-                        //                slideOffset += 100 // Adjust the slide offset value as needed
-                        //            }
-                    }
-                }.navigationBarBackButtonHidden(true)
+                        withAnimation {
+                            if tapCount <= 2 {
+                                tapCount += 1
+                            }
+                            diniMuncul = true
+                            //                slideOffset += 100 // Adjust the slide offset value as needed
+                            //            }
+                        }
+                    }.navigationBarBackButtonHidden(true)
+                }
+                
             }
             
         }
         
+        //    struct ScreenBilla_Previews: PreviewProvider {
+        //        static var previews: some View {
+        //            ScreenBilla()
+        //        }
+        //    }
     }
-    
-//    struct ScreenBilla_Previews: PreviewProvider {
-//        static var previews: some View {
-//            ScreenBilla()
-//        }
-//    }
 }
