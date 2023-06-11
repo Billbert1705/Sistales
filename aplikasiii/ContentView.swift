@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AVKit
+
 //JANGAN DIOTAK ATIK
 //JANGAN DIOTAK ATIK
 //JANGAN DIOTAK ATIK
@@ -376,7 +378,7 @@ struct Screen4: View {
 struct Screen5: View {
     @State private var isAudioEnabled = true
     @Binding var isNextScreenActive: Bool
-    @State private var isScreen6Active = false
+    @State private var isScreen51Active = false
     var body: some View {
         VStack {
             HStack {
@@ -406,12 +408,12 @@ struct Screen5: View {
             .resizable()
             .frame(width: 390, height: 856.5))
         .onTapGesture {
-            isScreen6Active = true
+            isScreen51Active = true
         }
         .background(
             NavigationLink(
-                destination: Screen6(isNextScreenActive: $isNextScreenActive),
-                isActive: $isScreen6Active
+                destination: Screen51(isNextScreenActive: $isNextScreenActive, videoFileName: "edu"),
+                isActive: $isScreen51Active
             ) {
                 EmptyView()
             }
@@ -420,6 +422,89 @@ struct Screen5: View {
         .navigationBarHidden(true)
     }
 }
+
+struct Screen51: View {
+    @State private var isAudioEnabled = true
+    @Binding var isNextScreenActive: Bool
+    @State private var isScreen6Active = false
+    @State private var isVideoFinished = false
+    @State private var player: AVPlayer?
+
+    let videoFileName: String?
+
+    var body: some View {
+        VStack {
+            HStack {
+                NavigationLink(destination: Screen5(isNextScreenActive: $isNextScreenActive)) {
+                    Image(systemName: "chevron.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 34)
+                        .padding(.horizontal, 10)
+                        .foregroundColor(.black)
+                }
+                Spacer()
+                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                    .foregroundColor(.black)
+            }
+            Spacer()
+            Spacer()
+            VideoView(fileName: videoFileName)
+                .onAppear {
+                    playVideo(fileName: videoFileName)
+                }
+                .onDisappear {
+                    stopVideo()
+                }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+            Image("scene19")
+                .resizable()
+                .frame(width: 390, height: 856.5)
+        )
+        .onTapGesture {
+            if isVideoFinished {
+                isScreen6Active = true
+            }
+        }
+        .background(
+            NavigationLink(
+                destination: Screen6(isNextScreenActive: $isNextScreenActive),
+                isActive: $isScreen6Active
+            ) {
+                EmptyView()
+            }
+            .hidden()
+        )
+        .navigationBarHidden(true)
+    }
+
+    private func playVideo(fileName: String?) {
+        guard let fileName = fileName, let videoURL = Bundle.main.url(forResource: fileName, withExtension: "MOV") else {
+            return
+        }
+        player = AVPlayer(url: videoURL)
+        player?.play()
+
+        // Observe when the video playback reaches its end
+        player?.addBoundaryTimeObserver(forTimes: [NSValue(time: CMTime(seconds: 15, preferredTimescale: 1))], queue: .main) { [self] in
+            isVideoFinished = true
+        }
+    }
+
+    private func stopVideo() {
+        player?.pause()
+        player = nil
+    }
+}
+
+
+
+
+
+
+
 struct Screen6: View {
     @State private var isAudioEnabled = true
     @Binding var isNextScreenActive: Bool
@@ -428,7 +513,7 @@ struct Screen6: View {
         VStack {
             HStack {
                 NavigationLink{
-                    Screen5(isNextScreenActive: $isNextScreenActive)
+                    Screen51(isNextScreenActive: $isNextScreenActive, videoFileName: "edu")
                 }label:{
                     Image(systemName: "chevron.left")
                         .resizable()
@@ -646,4 +731,5 @@ struct Screen7: View {
         }
     }
 }
+
 

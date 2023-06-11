@@ -14,10 +14,42 @@
             filePath = "aplikasiii/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "5AF9C076-7B3F-43E1-A9D3-7245D1BB522E - bb33afd523d70a3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "aplikasiii.Screen3.body.getter : some"
+                  moduleName = "aplikasiii"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ntany/Desktop/SisTales%20v.1/aplikasiii/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "309"
+                  endingLineNumber = "309"
+                  offsetFromSymbolStart = "1124">
+               </Location>
+               <Location
+                  uuid = "5AF9C076-7B3F-43E1-A9D3-7245D1BB522E - bb33afd523d70a3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "aplikasiii.Screen3.body.getter : some"
+                  moduleName = "aplikasiii"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ntany/Desktop/SisTales%20v.1/aplikasiii/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "309"
+                  endingLineNumber = "309"
+                  offsetFromSymbolStart = "884">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
