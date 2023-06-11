@@ -67,6 +67,9 @@ struct StartPage: View {
                 ContentViews()
                     .transition(.opacity)
             }
+            .onAppear {
+                playSound(sound: "play", type: "mp3")
+            }
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		68241DCC2A315C720023B109 /* NextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68241DCB2A315C720023B109 /* NextScreen.swift */; };
+		68BE92792A3618B300A86AC7 /* edu.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 68BE92782A3618B300A86AC7 /* edu.MOV */; };
+		68BE927B2A3618D700A86AC7 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BE927A2A3618D700A86AC7 /* PlaySound.swift */; };
+		68BE927D2A36191600A86AC7 /* play.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68BE927C2A36191600A86AC7 /* play.mp3 */; };
+		68BE927F2A36194100A86AC7 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BE927E2A36194100A86AC7 /* VideoView.swift */; };
 		B430BE8B2A320A5700B18D0F /* edukasi 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430BE8A2A320A5700B18D0F /* edukasi 2.swift */; };
 		B430BE8D2A321FAA00B18D0F /* screenqoni3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430BE8C2A321FAA00B18D0F /* screenqoni3.swift */; };
 		B4C3CFB32A30DB3C00D95627 /* screenqoni.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3CFB22A30DB3C00D95627 /* screenqoni.swift */; };
@@ -49,6 +53,10 @@
 
 /* Begin PBXFileReference section */
 		68241DCB2A315C720023B109 /* NextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextScreen.swift; sourceTree = "<group>"; };
+		68BE92782A3618B300A86AC7 /* edu.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = edu.MOV; sourceTree = "<group>"; };
+		68BE927A2A3618D700A86AC7 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
+		68BE927C2A36191600A86AC7 /* play.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = play.mp3; sourceTree = "<group>"; };
+		68BE927E2A36194100A86AC7 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		B430BE8A2A320A5700B18D0F /* edukasi 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "edukasi 2.swift"; sourceTree = "<group>"; };
 		B430BE8C2A321FAA00B18D0F /* screenqoni3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenqoni3.swift; sourceTree = "<group>"; };
 		B4C3CFB22A30DB3C00D95627 /* screenqoni.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenqoni.swift; sourceTree = "<group>"; };
@@ -139,6 +147,10 @@
 				B4D915052A31EDF400CB2AA9 /* edukasi.swift */,
 				B430BE8A2A320A5700B18D0F /* edukasi 2.swift */,
 				68241DCB2A315C720023B109 /* NextScreen.swift */,
+				68BE927A2A3618D700A86AC7 /* PlaySound.swift */,
+				68BE927E2A36194100A86AC7 /* VideoView.swift */,
+				68BE927C2A36191600A86AC7 /* play.mp3 */,
+				68BE92782A3618B300A86AC7 /* edu.MOV */,
 				BF845BEC2A2C7DBF00C51118 /* Preview Content */,
 			);
 			path = aplikasiii;
@@ -273,6 +285,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68BE927D2A36191600A86AC7 /* play.mp3 in Resources */,
+				68BE92792A3618B300A86AC7 /* edu.MOV in Resources */,
 				BF845BEE2A2C7DBF00C51118 /* Preview Assets.xcassets in Resources */,
 				BF845BEB2A2C7DBF00C51118 /* Assets.xcassets in Resources */,
 			);
@@ -305,6 +319,7 @@
 				BF845BE72A2C7DBE00C51118 /* aplikasiiiApp.swift in Sources */,
 				F1E13A912A324BA2004E46CD /* ScreenBilla.swift in Sources */,
 				F1E13A962A325F4D004E46CD /* PembalutScreen.swift in Sources */,
+				68BE927F2A36194100A86AC7 /* VideoView.swift in Sources */,
 				B430BE8D2A321FAA00B18D0F /* screenqoni3.swift in Sources */,
 				F1E13A932A3256E7004E46CD /* TissueScreen.swift in Sources */,
 				F1E13A9C2A32D645004E46CD /* SiapPakaiScreen.swift in Sources */,
@@ -315,6 +330,7 @@
 				B4D915062A31EDF400CB2AA9 /* edukasi.swift in Sources */,
 				B4C3CFB52A30E59A00D95627 /* screenqoni2.swift in Sources */,
 				B430BE8B2A320A5700B18D0F /* edukasi 2.swift in Sources */,
+				68BE927B2A3618D700A86AC7 /* PlaySound.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
