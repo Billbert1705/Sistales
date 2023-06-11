@@ -389,12 +389,12 @@ struct Screen201: View {
         )
         .navigationBarHidden(true)
     }
-                    
+    
 }
 
 struct Screen21: View {
     @Binding var isNextScreenActive: Bool
-    @State private var isScreen10Active = false
+    @State private var isScreen21Active = false
     var body: some View {
         VStack {
             HStack {
@@ -411,26 +411,64 @@ struct Screen21: View {
         .background(Image("edu21")
             .resizable()
             .frame(width: 390, height: 856.5))
-        .navigationBarHidden(true)
-        .onAppear {
-            performVibration()
+        .onTapGesture {
+            isScreen21Active = true
         }
-        
-        //        .onTapGesture {
-        //            isScreen10Active = true
-        //        }
-        //        .background(
-        //            NavigationLink(
-        //                destination: Screen22(isNextScreenActive: $isNextScreenActive),
-        //                isActive: $isScreen21Active
-        //            ) {
-        //                EmptyView()
-        //            }
-        //                .hidden()
-        //        )
-        //        .navigationBarHidden(true)
+        .background(
+            NavigationLink(
+                destination: Screen22(isNextScreenActive: $isNextScreenActive),
+                isActive: $isScreen21Active
+            ) {
+                EmptyView()
+            }
+                .hidden()
+        )
+        .navigationBarHidden(true)
     }
 }
+    
+    struct Screen22: View {
+        @Binding var isNextScreenActive: Bool
+        @State private var isScreen22Active = false
+        var body: some View {
+            VStack {
+                HStack {
+                    Image("grouphome")
+                }
+                
+            }
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Image("scene21")
+                .resizable()
+                .frame(width: 390, height: 856.5))
+            NavigationLink(destination: StartPage()
+            ) {
+                EmptyView()
+            }
+                .hidden()
+        
+            .navigationBarHidden(true)
+            .onAppear {
+                performVibration()
+            }
+    }
+    
+    //        .onTapGesture {
+    //            isScreen10Active = true
+    //        }
+    //        .background(
+    //            NavigationLink(
+    //                destination: Screen22(isNextScreenActive: $isNextScreenActive),
+    //                isActive: $isScreen21Active
+    //            ) {
+    //                EmptyView()
+    //            }
+    //                .hidden()
+    //        )
+    //        .navigationBarHidden(true)
+}
+
 struct PerformVibrationOnAppear: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -438,7 +476,7 @@ struct PerformVibrationOnAppear: ViewModifier {
                 performVibration()
             }
     }
-
+    
     private func performVibration() {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
@@ -472,4 +510,4 @@ struct NextScreen_Previews: PreviewProvider {
     }
 }
 
-    
+

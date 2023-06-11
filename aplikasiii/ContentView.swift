@@ -54,7 +54,7 @@ struct StartPage: View {
             Button(action: {
                 isNextScreenActive = true
             }) {
-                Text("START GAME")
+                Text("START")
                     .padding()
                     .background(Image("pink"))
                     .foregroundColor(.black)
