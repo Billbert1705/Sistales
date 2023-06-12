@@ -7,7 +7,7 @@
 
 import SwiftUI
 import AVKit
-import  AVFoundation
+import AVFoundation
 
 //JANGAN DIOTAK ATIK
 //JANGAN DIOTAK ATIK
@@ -70,9 +70,9 @@ struct StartPage: View {
                 ContentViews()
                     .transition(.opacity)
             }
-            .onAppear {
-                playSound(sound: "play", type: "mp3")
-            }
+//            .onAppear {
+//                playSound(sound: "play", type: "mp3")
+//            }
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -424,15 +424,17 @@ struct Screen5: View {
     }
 }
 
+
 struct Screen51: View {
     @State private var isAudioEnabled = true
     @Binding var isNextScreenActive: Bool
     @State private var isScreen6Active = false
     @State private var isVideoFinished = false
     @State private var player: AVPlayer?
-    
+    private let backgroundMusicPlayer = BackgroundMusicPlayer()
+
     let videoFileName: String?
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -445,18 +447,20 @@ struct Screen51: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                //                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                //                    .foregroundColor(.black)
             }
             Spacer()
             Spacer()
-            VideoPlayer(player: player)
-                .onAppear {
-                    playVideo(fileName: videoFileName)
-                }
-                .onDisappear {
-                    stopVideo()
-                }
+            if let player = player {
+                VideoPlayer(player: player)
+                    .onAppear {
+                        stopBackgroundMusic()
+                        playVideo(fileName: videoFileName)
+                    }
+                    .onDisappear {
+                        stopVideo()
+                        playBackgroundMusic()
+                    }
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
@@ -476,32 +480,43 @@ struct Screen51: View {
             ) {
                 EmptyView()
             }
-                .hidden()
+            .hidden()
         )
         .navigationBarHidden(true)
     }
-    
+
     private func playVideo(fileName: String?) {
-        guard let fileName = fileName, let videoURL = Bundle.main.url(forResource: "eedu", withExtension: "mov") else {
+        guard let fileName = fileName, let videoURL = Bundle.main.url(forResource: fileName, withExtension: "mov") else {
             return
         }
-        player = AVPlayer(url: videoURL)
-        player?.play()
-        
+        let playerItem = AVPlayerItem(url: videoURL)
+                player = AVPlayer(playerItem: playerItem)
+
         // Observe when the video playback reaches its end
-        player?.addBoundaryTimeObserver(forTimes: [NSValue(time: CMTime(seconds: 10, preferredTimescale: 1))], queue: .main) { [self] in
-            isVideoFinished = true
-        }
-    }
-    
+        NotificationCenter.default.addObserver(self, selector: #selector(VideoPlaybackObserver.videoDidFinishPlaying(_:)), name: .AVPlayerItemDidPlayToEndTime, object: playerItem)
+
+                player?.play()
+            }
+            
+
     private func stopVideo() {
         player?.pause()
         player = nil
     }
+
+    private func playBackgroundMusic() {
+        backgroundMusicPlayer.playBackgroundMusic()
+    }
+
+    private func stopBackgroundMusic() {
+        backgroundMusicPlayer.stopBackgroundMusic()
+    }
 }
-
-
-
+class VideoPlaybackObserver {
+    @objc func videoDidFinishPlaying(_ notification: Notification) {
+        // Handle video playback completion here
+    }
+}
 
 
 

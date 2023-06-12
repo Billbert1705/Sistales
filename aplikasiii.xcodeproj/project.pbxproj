@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		68241DCC2A315C720023B109 /* NextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68241DCB2A315C720023B109 /* NextScreen.swift */; };
 		6886B7BA2A36FEF40015749C /* eedu.mov in Resources */ = {isa = PBXBuildFile; fileRef = 6886B7B92A36FEF40015749C /* eedu.mov */; };
+		6886B7C22A3721230015749C /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6886B7C12A3721220015749C /* backgroundMusic.mp3 */; };
 		68BE92792A3618B300A86AC7 /* edu.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 68BE92782A3618B300A86AC7 /* edu.MOV */; };
 		68BE927B2A3618D700A86AC7 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BE927A2A3618D700A86AC7 /* PlaySound.swift */; };
 		68BE927D2A36191600A86AC7 /* play.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 68BE927C2A36191600A86AC7 /* play.mp3 */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		68241DCB2A315C720023B109 /* NextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextScreen.swift; sourceTree = "<group>"; };
 		6886B7B92A36FEF40015749C /* eedu.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = eedu.mov; sourceTree = "<group>"; };
+		6886B7C12A3721220015749C /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		68BE92782A3618B300A86AC7 /* edu.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = edu.MOV; sourceTree = "<group>"; };
 		68BE927A2A3618D700A86AC7 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
 		68BE927C2A36191600A86AC7 /* play.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = play.mp3; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				68241DCB2A315C720023B109 /* NextScreen.swift */,
 				68BE927A2A3618D700A86AC7 /* PlaySound.swift */,
 				68BE927E2A36194100A86AC7 /* VideoView.swift */,
+				6886B7C12A3721220015749C /* backgroundMusic.mp3 */,
 				68BE927C2A36191600A86AC7 /* play.mp3 */,
 				6886B7B92A36FEF40015749C /* eedu.mov */,
 				68BE92782A3618B300A86AC7 /* edu.MOV */,
@@ -293,6 +296,7 @@
 			files = (
 				68BE927D2A36191600A86AC7 /* play.mp3 in Resources */,
 				6886B7BA2A36FEF40015749C /* eedu.mov in Resources */,
+				6886B7C22A3721230015749C /* backgroundMusic.mp3 in Resources */,
 				68BE92792A3618B300A86AC7 /* edu.MOV in Resources */,
 				BF845BEE2A2C7DBF00C51118 /* Preview Assets.xcassets in Resources */,
 				BF845BEB2A2C7DBF00C51118 /* Assets.xcassets in Resources */,

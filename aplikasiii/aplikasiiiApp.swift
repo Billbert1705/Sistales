@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct aplikasiiiApp: App {
+    let backgroundMusicPlayer = BackgroundMusicPlayer.shared
     var body: some Scene {
         WindowGroup {
             SplashScreen()
+                .onAppear {
+                    backgroundMusicPlayer.playBackgroundMusic()
+                }
+                .onDisappear {
+                    backgroundMusicPlayer.stopBackgroundMusic()
+                }
         }
     }
 }
