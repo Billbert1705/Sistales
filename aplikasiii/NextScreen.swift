@@ -373,13 +373,23 @@ struct Screen19: View {
 struct Screen20: View {
     @Binding var isNextScreenActive: Bool
     @State private var isScreen20Active = false
+    @State private var isAudioEnabled = false
+    
     var body: some View {
         VStack {
             HStack {
+                NavigationLink{
+                    Screen19(isNextScreenActive: $isNextScreenActive)                }label: {
+                    Image(systemName: "chevron.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 34)
+                        .padding(.horizontal, 10)
+                        .foregroundColor(.black)
+                }
                 Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
+                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                    .foregroundColor(.black)
             }
             Spacer()
             Spacer()
@@ -407,13 +417,23 @@ struct Screen20: View {
 struct Screen201: View {
     @Binding var isNextScreenActive: Bool
     @State private var isScreen201Active = false
+    @State private var isAudioEnabled = false
+    
     var body: some View {
         VStack {
             HStack {
+                NavigationLink{
+                    Screen20(isNextScreenActive: $isNextScreenActive)                }label: {
+                    Image(systemName: "chevron.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 34)
+                        .padding(.horizontal, 10)
+                        .foregroundColor(.black)
+                }
                 Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
+                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                    .foregroundColor(.black)
             }
             Spacer()
             Spacer()
@@ -443,13 +463,23 @@ struct Screen201: View {
 struct Screen21: View {
     @Binding var isNextScreenActive: Bool
     @State private var isScreen21Active = false
+    @State private var isAudioEnabled = false
+    
     var body: some View {
         VStack {
             HStack {
+                NavigationLink{
+                    Screen201(isNextScreenActive: $isNextScreenActive)                }label: {
+                    Image(systemName: "chevron.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 34)
+                        .padding(.horizontal, 10)
+                        .foregroundColor(.black)
+                }
                 Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
+                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                    .foregroundColor(.black)
             }
             Spacer()
             Spacer()
@@ -481,7 +511,10 @@ struct Screen22: View {
     var body: some View {
         VStack {
             HStack {
-                Image("grouphome")
+                NavigationLink{
+                    StartPage()                }label: {
+                        Image("grouphome")
+                    }
             }
             
         }
