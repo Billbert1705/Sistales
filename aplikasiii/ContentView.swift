@@ -7,7 +7,7 @@
 
 import SwiftUI
 import AVKit
-import  AVFoundation
+import AVFoundation
 
 //JANGAN DIOTAK ATIK
 //JANGAN DIOTAK ATIK
@@ -78,9 +78,9 @@ struct StartPage: View {
                 ContentViews()
                     .transition(.opacity)
             }
-            .onAppear {
-                playSound(sound: "play", type: "mp3")
-            }
+            //            .onAppear {
+            //                playSound(sound: "play", type: "mp3")
+            //            }
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -432,12 +432,14 @@ struct Screen5: View {
     }
 }
 
+
 struct Screen51: View {
     @State private var isAudioEnabled = true
     @Binding var isNextScreenActive: Bool
     @State private var isScreen6Active = false
     @State private var isVideoFinished = false
     @State private var player: AVPlayer?
+    @State private var isVideoPlaying = false
     
     let videoFileName: String?
     
@@ -453,17 +455,17 @@ struct Screen51: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                //                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                //                    .foregroundColor(.black)
             }
             Spacer()
             Spacer()
             VideoPlayer(player: player)
                 .onAppear {
-                    playVideo(fileName: videoFileName)
+                    isVideoPlaying = true
+                    BackgroundMusicPlayer.shared.stopBackgroundMusic()
                 }
                 .onDisappear {
-                    stopVideo()
+                    isVideoPlaying = false
+                    BackgroundMusicPlayer.shared.playBackgroundMusic()
                 }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -474,6 +476,7 @@ struct Screen51: View {
         )
         .onTapGesture {
             if isVideoFinished {
+                stopVideo()
                 isScreen6Active = true
             }
         }
@@ -487,6 +490,9 @@ struct Screen51: View {
                 .hidden()
         )
         .navigationBarHidden(true)
+        .onAppear {
+            playVideo(fileName: videoFileName)
+        }
     }
     
     private func playVideo(fileName: String?) {
