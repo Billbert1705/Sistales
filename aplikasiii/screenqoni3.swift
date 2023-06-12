@@ -29,6 +29,7 @@ struct screenqoni3: View {
                                     .padding(.horizontal, 20)
                             }
                             .foregroundColor(.black)
+                            .navigationBarHidden(true)
                             Image("imageSound")
                                 .resizable()
                                 .frame(width: 43, height: 43)
@@ -36,14 +37,17 @@ struct screenqoni3: View {
                                 .frame(maxWidth: .infinity, alignment: .trailing)
                         }
                         Spacer()
+                            .navigationBarHidden(true)
+                            .navigationBarBackButtonHidden(true)
                     }
                 }
                 .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
             }
             .navigationBarBackButtonHidden(true)
             .buttonStyle(PlainButtonStyle())
-            
-        }
+            .navigationBarHidden(true)
+        }.navigationBarBackButtonHidden(true)
     }
     struct screenqoni3_Previews: PreviewProvider {
         static var previews: some View {

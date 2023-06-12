@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SiapPakaiScreen: View {
     @State private var size = UIScreen.main.bounds.size
-    
+    @State var isAudioEnabled = false
     
     var body: some View {
         NavigationStack{
@@ -17,20 +17,40 @@ struct SiapPakaiScreen: View {
                 screenqoni()
             }label:{
                 ZStack{
+                    
                     Image("screenSiap")
                         .resizable()
                         .frame(width: 400, height: 900)
                         .ignoresSafeArea()
-                    
-                    RoundedRectangle(cornerRadius: 10)
-                        .frame(width: 343, height: 80)
-                        .foregroundColor(.white)
-                        .overlay(Text("Sip, udah kan.\nKe kantin yuk?"))
-                        .position(x: size.width/2, y: size.height-100)
+                    VStack{
+                        HStack{
+                            NavigationLink{
+                                screenqoni(buttonMuncul: true, tapCount : 1)
+                            }label: {
+                                Image(systemName: "chevron.left")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 34)
+                                    .padding(.horizontal, 20)
+                                    .foregroundColor(.black)
+                            }
+                            Spacer()
+                            AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                                .foregroundColor(.black)
+                                .padding(.trailing, 25)
+                        }
+                        .padding(.top, 70)
+                        
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 343, height: 80)
+                            .foregroundColor(.white)
+                            .overlay(Text("Sip, udah kan.\nKe kantin yuk?"))
+                            .position(x: size.width/2, y: size.height-225)
+                    }
                 }
                 .foregroundColor(.black)
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

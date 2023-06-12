@@ -10,20 +10,32 @@ import UIKit
 
 struct NextScreen: View {
     @State private var isNextScreenActive = false
+    @State var isAudioEnabled = false
     
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
+                    NavigationLink{
+                        screenqoni3()
+                    }label:{
+                        Image(systemName: "chevron.left")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 34)
+                            .padding(.horizontal, 15)
+                            .foregroundColor(.black)
+                    }
                     Spacer()
-                    Image("imageSound")
-                        .resizable()
-                        .frame(width: 43, height: 43)
-                        .padding(.horizontal, 15)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                        .foregroundColor(.black)
+                        .padding(.trailing, 15)
+                    
                 }
+                .padding(.top, 55)
                 Spacer()
-                Spacer()
+                
+                
             }
             .background(
                 Image("scene17A")
@@ -41,9 +53,11 @@ struct NextScreen: View {
                 }
                     .hidden()
             )
+            .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
             .ignoresSafeArea()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -89,7 +103,7 @@ struct NextScreen: View {
 //    }
 //}
 struct Screen17B: View {
-    @State private var isAudioEnabled = true
+    @State private var isAudioEnabled = false
     @Binding var isNextScreenActive: Bool
     @State private var isPopUpVisible = false
     @State private var showAlert = false
@@ -98,8 +112,19 @@ struct Screen17B: View {
         NavigationView{
             VStack {
                 HStack {
+                    NavigationLink{
+                        NextScreen()
+                    }label:{
+                        Image(systemName: "chevron.left")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 34)
+                        //                            .padding(.horizontal)
+                            .foregroundColor(.black)
+                    }
                     Spacer()
                     AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                        .foregroundColor(.black)
                     //                    Image("imageSound")
                     //                        .resizable()
                     //                        .frame(width: 43, height: 43)
@@ -171,13 +196,26 @@ struct Screen17B: View {
 struct Screen18: View {
     @Binding var isNextScreenActive: Bool
     @State private var isScreen18Active = false
+    @State private var isAudioEnabled = false
+    
     var body: some View {
+        
         VStack {
             HStack {
+                NavigationLink{
+                    Screen17B(isNextScreenActive: $isNextScreenActive)
+                    
+                }label:{
+                    Image(systemName: "chevron.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 34)
+                    //                            .padding(.horizontal)
+                        .foregroundColor(.black)
+                }
                 Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
+                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                    .foregroundColor(.black)
             }
             Spacer()
             Spacer()
@@ -206,13 +244,23 @@ struct Screen18: View {
 struct Screen19: View {
     @Binding var isNextScreenActive: Bool
     @State private var isScreen19Active = false
+    @State private var isAudioEnabled = false
+    
     var body: some View {
         VStack {
             HStack {
+                NavigationLink{
+                    Screen18(isNextScreenActive: $isNextScreenActive)                }label: {
+                    Image(systemName: "chevron.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 34)
+                        .padding(.horizontal, 10)
+                        .foregroundColor(.black)
+                }
                 Spacer()
-                Image("imageSound")
-                    .resizable()
-                    .frame(width: 43, height: 43)
+                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+                    .foregroundColor(.black)
             }
             Spacer()
             ScrollView(.horizontal){
@@ -426,32 +474,32 @@ struct Screen21: View {
         .navigationBarHidden(true)
     }
 }
-    
-    struct Screen22: View {
-        @Binding var isNextScreenActive: Bool
-        @State private var isScreen22Active = false
-        var body: some View {
-            VStack {
-                HStack {
-                    Image("grouphome")
-                }
-                
+
+struct Screen22: View {
+    @Binding var isNextScreenActive: Bool
+    @State private var isScreen22Active = false
+    var body: some View {
+        VStack {
+            HStack {
+                Image("grouphome")
             }
-            .padding()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Image("scene21")
-                .resizable()
-                .frame(width: 390, height: 856.5))
-            NavigationLink(destination: StartPage()
-            ) {
-                EmptyView()
-            }
-                .hidden()
+            
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Image("scene21")
+            .resizable()
+            .frame(width: 390, height: 856.5))
+        NavigationLink(destination: StartPage()
+        ) {
+            EmptyView()
+        }
+        .hidden()
         
-            .navigationBarHidden(true)
-            .onAppear {
-                performVibration()
-            }
+        .navigationBarHidden(true)
+        .onAppear {
+            performVibration()
+        }
     }
     
     //        .onTapGesture {
