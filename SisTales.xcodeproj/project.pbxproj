@@ -269,7 +269,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BF845BDE2A2C7DBE00C51118 /* Build configuration list for PBXProject "aplikasiii" */;
+			buildConfigurationList = BF845BDE2A2C7DBE00C51118 /* Build configuration list for PBXProject "SisTales" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -628,7 +628,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF845BDE2A2C7DBE00C51118 /* Build configuration list for PBXProject "aplikasiii" */ = {
+		BF845BDE2A2C7DBE00C51118 /* Build configuration list for PBXProject "SisTales" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF845C052A2C7DBF00C51118 /* Debug */,
