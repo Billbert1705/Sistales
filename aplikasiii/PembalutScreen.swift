@@ -41,9 +41,9 @@ struct PembalutScreen: View {
 //                                .frame(width: 43, height: 43)
 //                                .padding(.horizontal, 15)
 //                                .frame(maxWidth: .infinity, alignment: .trailing)
-                            AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                                .foregroundColor(.black)
-                                .padding(.trailing, 25)
+//                            AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                                .foregroundColor(.black)
+//                                .padding(.trailing, 25)
                         }
                         .padding(.top, 90)
 //                        Spacer()

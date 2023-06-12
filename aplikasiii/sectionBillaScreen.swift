@@ -27,9 +27,9 @@ struct sectionBillaScreen: View {
                             .padding(.horizontal, 25)
                             .foregroundColor(.black)
                         Spacer()
-                        AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                            .foregroundColor(.black)
-                            .padding(.trailing, 25)
+//                        AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                            .foregroundColor(.black)
+//                            .padding(.trailing, 25)
                     }
                     .padding(.top, 90)
                     Spacer()

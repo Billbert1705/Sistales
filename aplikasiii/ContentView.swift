@@ -16,19 +16,19 @@ import AVKit
 //JANGAN DIOTAK ATIK
 //JANGAN DIOTAK ATIK
 //JANGAN DIOTAK ATIK
-struct AudioToggleButton: View {
-    @Binding var isAudioEnabled: Bool
-    
-    var body: some View {
-        Button(action: {
-            isAudioEnabled.toggle()
-        }) {
-            Image(systemName: isAudioEnabled ? "speaker.slash.fill" : "speaker.wave.2.fill")
-                .resizable()
-                .frame(width: 43, height: 43)
-        }
-    }
-}
+//struct AudioToggleButton: View {
+//    @Binding var isAudioEnabled: Bool
+//
+//    var body: some View {
+//        Button(action: {
+//            isAudioEnabled.toggle()
+//        }) {
+//            Image(systemName: isAudioEnabled ? "speaker.slash.fill" : "speaker.wave.2.fill")
+//                .resizable()
+//                .frame(width: 43, height: 43)
+//        }
+//    }
+//}
 struct SplashScreen: View {
     @State private var isActive = false
     
@@ -102,8 +102,8 @@ struct ContentViews: View {
                             .foregroundColor(.black)
                     }
                     Spacer()
-                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                        .foregroundColor(.black)
+//                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                        .foregroundColor(.black)
                 }
                 Spacer()
                 Spacer()
@@ -125,12 +125,12 @@ struct ContentViews: View {
                         //                                .frame(height: 34)
                         //                                .padding(.horizontal, 10)
                         //                                .foregroundColor(.black)
-                        //                            Spacer()
+                                                    Spacer()
                         //                            AudioToggleButton(isAudioEnabled: $isAudioEnabled)
                         //                                .foregroundColor(.black)
                         //                        }
                         //                        .padding(.top, 40)
-                        //                        Spacer()
+                                                Spacer()
                         //                        Text("Tap untuk lanjut!")
                         //                            .padding(.bottom, 40)
                     }
@@ -183,8 +183,8 @@ struct Screen2beta: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    .foregroundColor(.black)
+//                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    .foregroundColor(.black)
                 //<<<<<<< HEAD
                 //                //                Image("imageSound")
                 //                //                    .resizable()
@@ -245,8 +245,8 @@ struct Screen2: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    .foregroundColor(.black)
+//                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    .foregroundColor(.black)
                 
             }
             Spacer()
@@ -297,8 +297,8 @@ struct Screen3: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    .foregroundColor(.black)
+//                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    .foregroundColor(.black)
                 //                Image("imageSound")
                 //                    .resizable()
                 //                    .frame(width: 43, height: 43)
@@ -345,8 +345,8 @@ struct Screen4: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    .foregroundColor(.black)
+//                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    .foregroundColor(.black)
                 //                Image("imageSound")
                 //                    .resizable()
                 //                    .frame(width: 43, height: 43)
@@ -393,8 +393,8 @@ struct Screen5: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    .foregroundColor(.black)
+//                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    .foregroundColor(.black)
                 //                Image("imageSound")
                 //                    .resizable()
                 //                    .frame(width: 43, height: 43)
@@ -444,8 +444,8 @@ struct Screen51: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    .foregroundColor(.black)
+//                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    .foregroundColor(.black)
             }
             Spacer()
             Spacer()
@@ -523,8 +523,8 @@ struct Screen6: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    .foregroundColor(.black)
+//                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    .foregroundColor(.black)
                 //                Image("imageSound")
                 //                    .resizable()
                 //                    .frame(width: 43, height: 43)
@@ -600,8 +600,8 @@ struct Screen7: View {
                             .foregroundColor(.black)
                     }
                     Spacer()
-                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                        .foregroundColor(.black)
+//                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                        .foregroundColor(.black)
                     //<<<<<<< HEAD
                     //                    //                    Image("imageSound")
                     //                    //                        .resizable()
@@ -704,8 +704,8 @@ struct Screen7: View {
                             .foregroundColor(.black)
                     }
                     Spacer()
-                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                        .foregroundColor(.black)
+//                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                        .foregroundColor(.black)
                     //                Image("imageSound")
                     //                    .resizable()
                     //                    .frame(width: 43, height: 43)

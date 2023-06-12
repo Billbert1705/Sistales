@@ -27,9 +27,9 @@ struct NextScreen: View {
                             .foregroundColor(.black)
                     }
                     Spacer()
-                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                        .foregroundColor(.black)
-                        .padding(.trailing, 15)
+//                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                        .foregroundColor(.black)
+//                        .padding(.trailing, 15)
                     
                 }
                 .padding(.top, 55)
@@ -123,8 +123,8 @@ struct Screen17B: View {
                             .foregroundColor(.black)
                     }
                     Spacer()
-                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                        .foregroundColor(.black)
+//                    AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                        .foregroundColor(.black)
                     //                    Image("imageSound")
                     //                        .resizable()
                     //                        .frame(width: 43, height: 43)
@@ -214,8 +214,8 @@ struct Screen18: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    .foregroundColor(.black)
+//                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    .foregroundColor(.black)
             }
             Spacer()
             Spacer()
@@ -259,8 +259,8 @@ struct Screen19: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    .foregroundColor(.black)
+//                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    .foregroundColor(.black)
             }
             Spacer()
             ScrollView(.horizontal){
@@ -388,8 +388,8 @@ struct Screen20: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    .foregroundColor(.black)
+//                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    .foregroundColor(.black)
             }
             Spacer()
             Spacer()
@@ -432,8 +432,8 @@ struct Screen201: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    .foregroundColor(.black)
+//                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    .foregroundColor(.black)
             }
             Spacer()
             Spacer()
@@ -478,8 +478,8 @@ struct Screen21: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                    .foregroundColor(.black)
+//                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                    .foregroundColor(.black)
             }
             Spacer()
             Spacer()

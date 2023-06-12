@@ -36,9 +36,9 @@ struct PembalutEdu: View {
                                         .foregroundColor(.black)
                                 }
                                 Spacer()
-                                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
-                                    .foregroundColor(.black)
-                                    .padding(.trailing, 25)
+//                                AudioToggleButton(isAudioEnabled: $isAudioEnabled)
+//                                    .foregroundColor(.black)
+//                                    .padding(.trailing, 25)
 //                                Image("imageSound")
 //                                    .resizable()
 //                                    .frame(width: 43, height: 43)
