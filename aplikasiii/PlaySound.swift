@@ -22,13 +22,45 @@ import AVFoundation
 //}
 
 import AVFoundation
-//
+
+class BackgroundMusicPlayer {
+    static let shared = BackgroundMusicPlayer()
+    
+    private var audioPlayer: AVAudioPlayer?
+    
+    private init() {
+        setupAudioPlayer()
+    }
+    
+    private func setupAudioPlayer() {
+        if let path = Bundle.main.path(forResource: "backgroundMusic", ofType: "mp3") {
+            let url = URL(fileURLWithPath: path)
+            
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.numberOfLoops = -1 // Set the number of loops to -1 for infinite looping
+                audioPlayer?.prepareToPlay()
+            } catch {
+                print("Failed to initialize the audio player: \(error)")
+            }
+        }
+    }
+    
+    func playBackgroundMusic() {
+        audioPlayer?.play()
+    }
+    
+    func stopBackgroundMusic() {
+        audioPlayer?.stop()
+    }
+}
+
 //class BackgroundMusicPlayer {
 //    static let shared = BackgroundMusicPlayer()
 //
 //    private var audioPlayer: AVAudioPlayer?
 //
-//    private init() {
+//    public init() {
 //        setupAudioPlayer()
 //    }
 //
@@ -45,46 +77,14 @@ import AVFoundation
 //            }
 //        }
 //    }
+//    public func playBackgroundMusic() {
+//           audioPlayer?.play()
+//       }
 //
-//    func playBackgroundMusic() {
-//        audioPlayer?.play()
-//    }
-//
-//    func stopBackgroundMusic() {
-//        audioPlayer?.stop()
-//    }
-//}
-
-class BackgroundMusicPlayer {
-    static let shared = BackgroundMusicPlayer()
-
-    private var audioPlayer: AVAudioPlayer?
-
-    public init() {
-        setupAudioPlayer()
-    }
-
-    private func setupAudioPlayer() {
-        if let path = Bundle.main.path(forResource: "backgroundMusic", ofType: "mp3") {
-            let url = URL(fileURLWithPath: path)
-
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: url)
-                audioPlayer?.numberOfLoops = -1 // Set the number of loops to -1 for infinite looping
-                audioPlayer?.prepareToPlay()
-            } catch {
-                print("Failed to initialize the audio player: \(error)")
-            }
-        }
-    }
-    public func playBackgroundMusic() {
-           audioPlayer?.play()
-       }
-
-       public func stopBackgroundMusic() {
-           audioPlayer?.stop()
-       }
-   }
+//       public func stopBackgroundMusic() {
+//           audioPlayer?.stop()
+//       }
+//   }
 
 //    func playBackgroundMusic() {
 //        audioPlayer?.play()

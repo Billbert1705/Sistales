@@ -70,9 +70,9 @@ struct StartPage: View {
                 ContentViews()
                     .transition(.opacity)
             }
-//            .onAppear {
-//                playSound(sound: "play", type: "mp3")
-//            }
+            //            .onAppear {
+            //                playSound(sound: "play", type: "mp3")
+            //            }
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -431,10 +431,10 @@ struct Screen51: View {
     @State private var isScreen6Active = false
     @State private var isVideoFinished = false
     @State private var player: AVPlayer?
-    private let backgroundMusicPlayer = BackgroundMusicPlayer()
-
+    @State private var isVideoPlaying = false
+    
     let videoFileName: String?
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -450,17 +450,15 @@ struct Screen51: View {
             }
             Spacer()
             Spacer()
-            if let player = player {
-                VideoPlayer(player: player)
-                    .onAppear {
-                        stopBackgroundMusic()
-                        playVideo(fileName: videoFileName)
-                    }
-                    .onDisappear {
-                        stopVideo()
-                        playBackgroundMusic()
-                    }
-            }
+            VideoPlayer(player: player)
+                .onAppear {
+                    isVideoPlaying = true
+                    BackgroundMusicPlayer.shared.stopBackgroundMusic()
+                }
+                .onDisappear {
+                    isVideoPlaying = false
+                    BackgroundMusicPlayer.shared.playBackgroundMusic()
+                }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
@@ -470,6 +468,7 @@ struct Screen51: View {
         )
         .onTapGesture {
             if isVideoFinished {
+                stopVideo()
                 isScreen6Active = true
             }
         }
@@ -480,43 +479,35 @@ struct Screen51: View {
             ) {
                 EmptyView()
             }
-            .hidden()
+                .hidden()
         )
         .navigationBarHidden(true)
+        .onAppear {
+            playVideo(fileName: videoFileName)
+        }
     }
-
+    
     private func playVideo(fileName: String?) {
-        guard let fileName = fileName, let videoURL = Bundle.main.url(forResource: fileName, withExtension: "mov") else {
+        guard let fileName = fileName, let videoURL = Bundle.main.url(forResource: "eedu", withExtension: "mov") else {
             return
         }
-        let playerItem = AVPlayerItem(url: videoURL)
-                player = AVPlayer(playerItem: playerItem)
-
+        player = AVPlayer(url: videoURL)
+        player?.play()
+        
         // Observe when the video playback reaches its end
-        NotificationCenter.default.addObserver(self, selector: #selector(VideoPlaybackObserver.videoDidFinishPlaying(_:)), name: .AVPlayerItemDidPlayToEndTime, object: playerItem)
-
-                player?.play()
-            }
-            
-
+        player?.addBoundaryTimeObserver(forTimes: [NSValue(time: CMTime(seconds: 10, preferredTimescale: 1))], queue: .main) { [self] in
+            isVideoFinished = true
+        }
+    }
+    
     private func stopVideo() {
         player?.pause()
         player = nil
     }
-
-    private func playBackgroundMusic() {
-        backgroundMusicPlayer.playBackgroundMusic()
-    }
-
-    private func stopBackgroundMusic() {
-        backgroundMusicPlayer.stopBackgroundMusic()
-    }
 }
-class VideoPlaybackObserver {
-    @objc func videoDidFinishPlaying(_ notification: Notification) {
-        // Handle video playback completion here
-    }
-}
+
+
+
 
 
 
