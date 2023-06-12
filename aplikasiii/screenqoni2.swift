@@ -27,14 +27,15 @@ struct screenqoni2: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 34)
-                                    .padding(.horizontal, 20)
+                                    .padding(.leading, 20)
                                     .foregroundColor(.black)
                             }
-                            Image("imageSound")
-                                .resizable()
-                                .frame(width: 43, height: 43)
-                                .padding(.horizontal, 15)
-                                .frame(maxWidth: .infinity, alignment: .trailing)
+                            Spacer()
+//                            Image("imageSound")
+//                                .resizable()
+//                                .frame(width: 43, height: 43)
+//                                .padding(.horizontal, 15)
+//                                .frame(maxWidth: .infinity, alignment: .trailing)
                         }
                         Spacer()
                     }

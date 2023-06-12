@@ -30,11 +30,12 @@ struct screenqoni3: View {
                             }
                             .foregroundColor(.black)
                             .navigationBarHidden(true)
-                            Image("imageSound")
-                                .resizable()
-                                .frame(width: 43, height: 43)
-                                .padding(.horizontal, 15)
-                                .frame(maxWidth: .infinity, alignment: .trailing)
+                            Spacer()
+//                            Image("imageSound")
+//                                .resizable()
+//                                .frame(width: 43, height: 43)
+//                                .padding(.horizontal, 15)
+//                                .frame(maxWidth: .infinity, alignment: .trailing)
                         }
                         Spacer()
                             .navigationBarHidden(true)

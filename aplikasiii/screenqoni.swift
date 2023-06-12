@@ -34,11 +34,11 @@ struct screenqoni: View {
                                 .foregroundColor(.black)
                         }
                         Spacer()
-                        Image("imageSound")
-                            .resizable()
-                            .frame(width: 43, height: 43)
-                            .padding(.horizontal, 15)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
+//                        Image("imageSound")
+//                            .resizable()
+//                            .frame(width: 43, height: 43)
+//                            .padding(.horizontal, 15)
+//                            .frame(maxWidth: .infinity, alignment: .trailing)
                     }
                     
                     Image("diniEs")
