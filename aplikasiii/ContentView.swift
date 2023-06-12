@@ -53,16 +53,24 @@ struct StartPage: View {
     
     var body: some View {
         VStack {
-            Button(action: {
-                isNextScreenActive = true
-            }) {
-                Text("START")
-                    .padding()
-                    .background(Image("pink"))
-                    .foregroundColor(.black)
-                    .bold()
-                    .cornerRadius(60)
-                
+            ZStack{
+                RoundedRectangle(cornerRadius: 15)
+                    .frame(width: 200, height: 56)
+                    .shadow(radius: 0, x: 4, y: 4)
+                    .foregroundColor(Color("pink"))
+                Button(action: {
+                    isNextScreenActive = true
+                }) {
+                    Text("START")
+                        .padding()
+                        .background(Image("pink"))
+                        .foregroundColor(.black)
+                        .bold()
+                        .font(.largeTitle)
+                        .cornerRadius(60)
+                        .font(.system(size: 25))
+            }
+            
             }
             .padding()
             .fullScreenCover(isPresented: $isNextScreenActive) {
