@@ -26,7 +26,7 @@ struct ScreenBilla: View {
                 ZStack{
                     Image("toiletBackground")
                         .resizable()
-                        .frame(width: 400, height: 900)
+//                        .frame(width: 400, height: 900)
                         .ignoresSafeArea()
                     
                     VStack{

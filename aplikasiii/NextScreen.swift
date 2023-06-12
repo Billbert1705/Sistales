@@ -515,7 +515,8 @@ struct Screen22: View {
     @Binding var isNextScreenActive: Bool
     @State private var isScreen22Active = false
     @State var Muncul: Bool = false
-    @State var Ingpo: String = ""
+//    @State var Ingpo: String = ""
+    @State private var Ingpo: String = "UNICEF"
     
     var body: some View {
         VStack {
@@ -530,7 +531,8 @@ struct Screen22: View {
             Button {
                 print("Modal")
                 Muncul = true
-                self.Ingpo = "Pembalut dipake Po tiap hari kalo gaada orang yang liat"
+                self.Ingpo = "UNICEF\nVIII CONSTITUTIONAL GOVERNMENT\nMINISTRY OF HEALTH\nNATIONAL DIRECTORATE OF PUBLIC HEALTH DEPARTMENTS OF HEALTH PROMOTION AND EDUCATION.\nDili, Timor-Leste."
+                
             } label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 15)
@@ -547,6 +549,11 @@ struct Screen22: View {
         }
         .sheet(isPresented: $Muncul){
             viewModal(Ingpo: $Ingpo)
+                .onAppear {
+                    if let url = URL(string: "https://www.unicef.org/timorleste/media/2376/file/Menstrual%20Hygiene%20Management%20-%20English%20.pdf") {
+                        UIApplication.shared.open(url)
+                    }
+                }
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -619,18 +626,20 @@ struct EqualSizeButtonStyle: ViewModifier {
 struct viewModal : View {
     @Binding var Ingpo : String
     var body: some View{
-        ZStack{
-            Text("\(Ingpo)")
-                .font(.system(size: 40))
+        ZStack {
+                    Link(destination: URL(string: "https://www.unicef.org/timorleste/media/2376/file/Menstrual%20Hygiene%20Management%20-%20English%20.pdf")!, label: {
+                        Text(Ingpo)
+                            .font(.system(size: 17))
+                            .multilineTextAlignment(.leading)
+                            .ignoresSafeArea()
+                    })
+                }
+            }
+        }
+
+    struct NextScreen_Previews: PreviewProvider {
+        static var previews: some View {
+            NextScreen()
         }
     }
-    
-}
-
-struct NextScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        NextScreen()
-    }
-}
-
 

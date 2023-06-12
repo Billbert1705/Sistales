@@ -84,9 +84,10 @@ struct StartPage: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("imageStart")
+        .background(Image("bgedu")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
     }
@@ -125,7 +126,8 @@ struct ContentViews: View {
                 ZStack {
                     Image("scene3")
                         .resizable()
-                        .frame(width: 390, height: 856.5)
+                        .ignoresSafeArea()
+//                        .frame(width: 390, height: 856.5)
                     VStack {
                         //                        HStack {
                         //                            Image(systemName: "chevron.left")
@@ -148,7 +150,8 @@ struct ContentViews: View {
                     .background(
                         Image("scene3")
                             .resizable()
-                            .frame(width: 390, height: 856.5)
+                            .ignoresSafeArea()
+//                            .frame(width: 390, height: 856.5)
                     )
                     .onTapGesture {
                         isNextScreenActive = true
@@ -217,7 +220,8 @@ struct Screen2beta: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("scene31")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         .onTapGesture {
             isScreen3Active = true
         }
@@ -270,7 +274,8 @@ struct Screen2: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("scene31")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         .onTapGesture {
             isScreen3Active = true
         }
@@ -319,7 +324,8 @@ struct Screen3: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("scene322")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         .onTapGesture {
             isScreen4Active = true
         }
@@ -367,7 +373,8 @@ struct Screen4: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("scene4")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         .onTapGesture {
             isScreen5Active = true
         }
@@ -415,7 +422,8 @@ struct Screen5: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("scene5")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         .onTapGesture {
             isScreen51Active = true
         }
@@ -472,8 +480,9 @@ struct Screen51: View {
         .background(
             Image("scene19")
                 .resizable()
-                .frame(width: 390, height: 856.5)
-        )
+                .ignoresSafeArea())
+//                .frame(width: 390, height: 856.5)
+//        )
         .onTapGesture {
             if isVideoFinished {
                 stopVideo()
@@ -503,7 +512,7 @@ struct Screen51: View {
         player?.play()
         
         // Observe when the video playback reaches its end
-        player?.addBoundaryTimeObserver(forTimes: [NSValue(time: CMTime(seconds: 10, preferredTimescale: 1))], queue: .main) { [self] in
+        player?.addBoundaryTimeObserver(forTimes: [NSValue(time: CMTime(seconds: 15, preferredTimescale: 1))], queue: .main) { [self] in
             isVideoFinished = true
         }
     }
@@ -551,7 +560,8 @@ struct Screen6: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("scene6")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         .onTapGesture {
             isScreen7Active = true
         }
@@ -638,7 +648,8 @@ struct Screen7: View {
             .background(
                 Image("scene71")
                     .resizable()
-                    .frame(width: 390, height: 856.5)
+                    .ignoresSafeArea()
+//                    .frame(width: 390, height: 856.5)
                     .onTapGesture {
                         isPopUpVisible = true
                     }
