@@ -39,6 +39,9 @@ struct NextScreen: View {
             }
             .background(
                 Image("scene17A")
+                    .resizable()
+                    .ignoresSafeArea()
+                
                 
             )
             .onTapGesture {
@@ -138,7 +141,8 @@ struct Screen17B: View {
             .background(
                 Image("scene17B")
                     .resizable()
-                    .frame(width: 390, height: 856.5)
+//                    .frame(width: 390, height: 856.5)
+                    .ignoresSafeArea()
                     .onTapGesture {
                         isPopUpVisible = true
                     }
@@ -224,7 +228,8 @@ struct Screen18: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("scene18")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         .onTapGesture {
             isScreen18Active = true
         }
@@ -316,7 +321,8 @@ struct Screen19: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("scene19")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         .onTapGesture {
             isScreen19Active = true
         }
@@ -395,7 +401,8 @@ struct Screen20: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("scene20fix")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         .onTapGesture {
             isScreen20Active = true
         }
@@ -439,7 +446,8 @@ struct Screen201: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("edu20")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         .onTapGesture {
             isScreen201Active = true
         }
@@ -485,7 +493,8 @@ struct Screen21: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("edu21")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         .onTapGesture {
             isScreen21Active = true
         }
@@ -543,7 +552,8 @@ struct Screen22: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Image("scene21")
             .resizable()
-            .frame(width: 390, height: 856.5))
+            .ignoresSafeArea())
+//            .frame(width: 390, height: 856.5))
         NavigationLink(destination: StartPage()
         ) {
             EmptyView()
