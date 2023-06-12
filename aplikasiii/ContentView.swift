@@ -70,8 +70,8 @@ struct StartPage: View {
                         .font(.largeTitle)
                         .cornerRadius(60)
                         .font(.system(size: 25))
-            }
-            
+                }
+                
             }
             .padding()
             .fullScreenCover(isPresented: $isNextScreenActive) {
