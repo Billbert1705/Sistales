@@ -13,7 +13,7 @@ struct TissueScreen: View {
     var body: some View {
         NavigationStack{
             NavigationLink{
-                screenqoni2()
+                sectionBillaScreen()
             }label:{
             ZStack{
                 Image("bgedu")

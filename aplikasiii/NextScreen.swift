@@ -505,15 +505,39 @@ struct Screen21: View {
 struct Screen22: View {
     @Binding var isNextScreenActive: Bool
     @State private var isScreen22Active = false
+    @State var Muncul: Bool = false
+    @State var Ingpo: String = ""
+    
     var body: some View {
         VStack {
+            Spacer()
             HStack {
                 NavigationLink{
                     StartPage()                }label: {
                         Image("grouphome")
                     }
             }
-            
+            Spacer()
+            Button {
+                print("Modal")
+                Muncul = true
+                self.Ingpo = "Pembalut dipake Po tiap hari kalo gaada orang yang liat"
+            } label: {
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(width: 200, height: 56)
+                            .shadow(radius: 0, x: 4, y: 4)
+                            .foregroundColor(Color("pink"))
+                        Text("DAFTAR PUSTAKA")
+                            .font(.system(size: 15))
+                            .foregroundColor(.white)
+                            .bold()
+                    
+                }
+            }
+        }
+        .sheet(isPresented: $Muncul){
+            viewModal(Ingpo: $Ingpo)
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -580,6 +604,17 @@ struct EqualSizeButtonStyle: ViewModifier {
             .foregroundColor(.black)
             .cornerRadius(10)
     }
+}
+
+struct viewModal : View {
+    @Binding var Ingpo : String
+    var body: some View{
+        ZStack{
+            Text("\(Ingpo)")
+                .font(.system(size: 40))
+        }
+    }
+    
 }
 
 struct NextScreen_Previews: PreviewProvider {
