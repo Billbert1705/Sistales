@@ -302,18 +302,15 @@ struct Screen19: View {
                     //                    .padding(.trailing,25)
                     
                 }
-                
-                Text("Tap untuk Kembali!")
-                    .multilineTextAlignment(.leading)
-                    .padding(.bottom, 15)
-                    .foregroundColor(.black)
-                    .buttonStyle(PlainButtonStyle())
-                    .padding()
-                    .frame(alignment: .top)
-                
-                
-                
             }
+            Spacer()
+            Text("Swipe untuk Lanjut Membaca!")
+                .multilineTextAlignment(.leading)
+//                .padding(.bottom, 15)
+                .foregroundColor(.black)
+                .buttonStyle(PlainButtonStyle())
+                .padding()
+                .frame(alignment: .top)
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)

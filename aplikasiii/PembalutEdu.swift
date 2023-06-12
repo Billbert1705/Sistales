@@ -90,7 +90,7 @@ struct PembalutEdu: View {
                                         }
                                     }
                                 )
-                            Text("Tap untuk Kembali!")
+                            Text("Tap untuk Lanjut Membaca!")
                                 .foregroundColor(.black)
                                 .padding(.bottom)
                         }

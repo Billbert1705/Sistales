@@ -22,12 +22,13 @@ struct TissueScreen: View {
                 VStack{
                     HStack{
                         NavigationLink{
-                            screenqoni(buttonMuncul: true, tapCount : 1)
+                            sectionBillaScreen()
                         }label: {
                             Image(systemName: "chevron.left")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 34)
+                                .padding(.top)
                                 .padding(.horizontal, 20)
                                 .foregroundColor(.black)
                         }
@@ -67,7 +68,7 @@ struct TissueScreen: View {
                         .frame(width: 343, height: 557)
                     }
                     .padding(.bottom, 70)
-                    Text("Tap untuk Lanjut!")
+                    Text("Tap untuk Kembali!")
                     .padding(.bottom, 15)}
             }
         }

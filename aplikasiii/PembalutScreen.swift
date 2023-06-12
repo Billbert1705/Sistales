@@ -14,7 +14,7 @@ struct PembalutScreen: View {
     var body: some View {
         NavigationStack{
             NavigationLink{
-                PembalutEdu()
+                PembalutEdu2()
             }label: {
                 ZStack{
                     Image("PintuKamarMandi")

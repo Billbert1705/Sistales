@@ -15,6 +15,7 @@
 		68BE927F2A36194100A86AC7 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BE927E2A36194100A86AC7 /* VideoView.swift */; };
 		B430BE8B2A320A5700B18D0F /* edukasi 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430BE8A2A320A5700B18D0F /* edukasi 2.swift */; };
 		B430BE8D2A321FAA00B18D0F /* screenqoni3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B430BE8C2A321FAA00B18D0F /* screenqoni3.swift */; };
+		B463FB822A3718DC00009B2D /* PembalutEdu2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B463FB812A3718DC00009B2D /* PembalutEdu2.swift */; };
 		B4C3CFB32A30DB3C00D95627 /* screenqoni.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3CFB22A30DB3C00D95627 /* screenqoni.swift */; };
 		B4C3CFB52A30E59A00D95627 /* screenqoni2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3CFB42A30E59A00D95627 /* screenqoni2.swift */; };
 		B4D915062A31EDF400CB2AA9 /* edukasi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D915052A31EDF400CB2AA9 /* edukasi.swift */; };
@@ -61,6 +62,7 @@
 		68BE927E2A36194100A86AC7 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		B430BE8A2A320A5700B18D0F /* edukasi 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "edukasi 2.swift"; sourceTree = "<group>"; };
 		B430BE8C2A321FAA00B18D0F /* screenqoni3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenqoni3.swift; sourceTree = "<group>"; };
+		B463FB812A3718DC00009B2D /* PembalutEdu2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PembalutEdu2.swift; sourceTree = "<group>"; };
 		B4C3CFB22A30DB3C00D95627 /* screenqoni.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenqoni.swift; sourceTree = "<group>"; };
 		B4C3CFB42A30E59A00D95627 /* screenqoni2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenqoni2.swift; sourceTree = "<group>"; };
 		B4D915052A31EDF400CB2AA9 /* edukasi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = edukasi.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				F1E13A902A324BA2004E46CD /* ScreenBilla.swift */,
 				F1E13A922A3256E7004E46CD /* TissueScreen.swift */,
 				F1E13A972A32D536004E46CD /* PembalutEdu.swift */,
+				B463FB812A3718DC00009B2D /* PembalutEdu2.swift */,
 				F1E13A9B2A32D645004E46CD /* SiapPakaiScreen.swift */,
 				F1E13A9F2A32F4B9004E46CD /* sectionBillaScreen.swift */,
 				F1E13A952A325F4D004E46CD /* PembalutScreen.swift */,
@@ -330,6 +333,7 @@
 				F1E13A982A32D536004E46CD /* PembalutEdu.swift in Sources */,
 				68241DCC2A315C720023B109 /* NextScreen.swift in Sources */,
 				BF3F476F2A31E03D00760C22 /* screenbillbert.swift in Sources */,
+				B463FB822A3718DC00009B2D /* PembalutEdu2.swift in Sources */,
 				F1E13AA02A32F4B9004E46CD /* sectionBillaScreen.swift in Sources */,
 				B4D915062A31EDF400CB2AA9 /* edukasi.swift in Sources */,
 				B4C3CFB52A30E59A00D95627 /* screenqoni2.swift in Sources */,

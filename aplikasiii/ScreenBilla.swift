@@ -31,12 +31,16 @@ struct ScreenBilla: View {
                     
                     VStack{
                         HStack{
-                            Image(systemName: "chevron.left")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 34)
-                                .padding(.horizontal, 25)
-                                .foregroundColor(.black)
+                            NavigationLink{
+                                Screen7(isNextScreenActive: $isNextScreenActive)
+                            }label: {
+                                Image(systemName: "chevron.left")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 34)
+                                    .padding(.horizontal, 25)
+                                    .foregroundColor(.black)
+                            }
                             Spacer()
 //                            AudioToggleButton(isAudioEnabled: $isAudioEnabled)
 //                                .foregroundColor(.black)

@@ -25,7 +25,9 @@ struct SiapPakaiScreen: View {
                     VStack{
                         HStack{
                             NavigationLink{
-                                screenqoni(buttonMuncul: true, tapCount : 1)
+                                PembalutEdu2()
+                                
+//                                (buttonMuncul: true, tapCount : 1)
                             }label: {
                                 Image(systemName: "chevron.left")
                                     .resizable()
