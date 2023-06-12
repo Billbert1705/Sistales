@@ -449,7 +449,7 @@ struct Screen51: View {
             }
             Spacer()
             Spacer()
-            VideoView(fileName: videoFileName)
+            VideoPlayer(player: player)
                 .onAppear {
                     playVideo(fileName: videoFileName)
                 }
@@ -481,14 +481,14 @@ struct Screen51: View {
     }
 
     private func playVideo(fileName: String?) {
-        guard let fileName = fileName, let videoURL = Bundle.main.url(forResource: fileName, withExtension: "MOV") else {
+        guard let fileName = fileName, let videoURL = Bundle.main.url(forResource: "eedu", withExtension: "mov") else {
             return
         }
         player = AVPlayer(url: videoURL)
         player?.play()
 
         // Observe when the video playback reaches its end
-        player?.addBoundaryTimeObserver(forTimes: [NSValue(time: CMTime(seconds: 15, preferredTimescale: 1))], queue: .main) { [self] in
+        player?.addBoundaryTimeObserver(forTimes: [NSValue(time: CMTime(seconds: 10, preferredTimescale: 1))], queue: .main) { [self] in
             isVideoFinished = true
         }
     }

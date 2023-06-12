@@ -39,10 +39,10 @@ struct VideoView: View {
             //                .foregroundColor(Color("black"))
             //                .padding()
             
-            if let videoURL = Bundle.main.url(forResource: fileName ?? "edu", withExtension: "MOV") {
+            if let videoURL = Bundle.main.url(forResource: fileName ?? "eedu", withExtension: "mov") {
                 let player = AVPlayer(url: videoURL)
                 VideoPlayer(player: player)
-                    .rotationEffect(.degrees(90))
+//                    .rotationEffect(.degrees(90))
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .edgesIgnoringSafeArea(.all) // Ignore safe area to fill the entire screen
@@ -62,6 +62,6 @@ struct VideoView: View {
 
 struct VideoView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoView(fileName: "edu")
+        VideoView(fileName: "eedu")
     }
 }
