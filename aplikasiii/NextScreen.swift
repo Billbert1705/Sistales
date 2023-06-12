@@ -270,7 +270,7 @@ struct Screen19: View {
                             .frame(width: 343, height: 557)
                             .foregroundColor(.white)
                         VStack{
-                            Image("edu1")
+                            Image("edu11")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 343, height: 557)
@@ -286,7 +286,7 @@ struct Screen19: View {
                             .frame(width: 343, height: 557)
                             .foregroundColor(.white)
                         VStack{
-                            Image("edu2")
+                            Image("edu22")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 343, height: 557)
