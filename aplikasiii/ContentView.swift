@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVKit
+import  AVFoundation
 
 //JANGAN DIOTAK ATIK
 //JANGAN DIOTAK ATIK
